@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>EV Technology RMUTR</title>
 
@@ -13,26 +15,176 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, "Tahoma", sans-serif;
+
+            font-family:
+                Arial,
+                "Tahoma",
+                sans-serif;
+
             background: #071629;
             color: white;
         }
 
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(5, 20, 35, 0.94);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        .nav-container {
+
+            max-width: 1450px;
+
+            margin: auto;
+
+            min-height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content:
+                space-between;
+
+            padding:
+                0 30px;
+        }
+
+
+        .logo {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 19px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            white-space: nowrap;
+        }
+
+
+        .logo-ev {
+
+            color: #40e0c0;
+
+            margin-right: 5px;
+        }
+
+
+        .nav-menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 23px;
+        }
+
+
+        .nav-menu a {
+
+            color: #d7e7f2;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: 0.25s;
+
+            white-space: nowrap;
+        }
+
+
+        .nav-menu a:hover {
+
+            color: #40e0c0;
+        }
+
+
+        .nav-admission {
+
+            border:
+                1px solid #40e0c0;
+
+            border-radius: 25px;
+
+            padding:
+                9px 18px;
+        }
+
+
+        .nav-admission:hover {
+
+            background: #40e0c0;
+
+            color:
+                #062033 !important;
+        }
+
+
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
+
             min-height: 100vh;
 
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
+
             align-items: center;
 
             text-align: center;
 
-            padding: 40px 20px;
+            padding:
+                130px 20px 60px;
 
             background:
+
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(0,180,190,0.15),
+                    transparent 35%
+                ),
+
                 linear-gradient(
                     135deg,
                     #061525,
@@ -41,129 +193,329 @@
                 );
         }
 
+
         .tag {
+
             color: #53e0c1;
+
             font-size: 18px;
+
             letter-spacing: 3px;
-            margin-bottom: 20px;
+
+            margin-bottom: 25px;
         }
 
+
         h1 {
+
             font-size: 60px;
+
             margin: 0;
+
             font-weight: 800;
         }
 
+
         h2 {
+
             font-size: 32px;
-            margin-top: 15px;
+
+            margin-top: 20px;
+
             color: #4dd6ff;
         }
 
-        p {
+
+        .hero-description {
+
             font-size: 20px;
-            max-width: 900px;
-            line-height: 1.7;
+
+            max-width: 950px;
+
+            line-height: 1.8;
+
             color: #d9e8f5;
+
+            margin-top: 25px;
         }
 
+
         .technology {
-            margin-top: 20px;
+
+            margin-top: 25px;
+
             color: #8ce6d2;
+
+            font-size: 19px;
+
             font-weight: bold;
         }
 
+
         .buttons {
-            margin-top: 35px;
+
+            margin-top: 40px;
         }
 
+
         .button {
+
             display: inline-block;
-            padding: 14px 28px;
+
+            padding:
+                14px 28px;
+
             margin: 8px;
 
             color: white;
+
             text-decoration: none;
 
-            border: 1px solid #38bdf8;
+            border:
+                1px solid #38bdf8;
+
             border-radius: 30px;
 
             transition: 0.3s;
         }
 
+
         .button:hover {
+
             background: #38bdf8;
+
             color: #051523;
         }
 
+
         .primary {
+
             background: #16a085;
+
             border-color: #16a085;
         }
 
-        @media (max-width: 768px) {
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media
+        (max-width: 1100px) {
+
+            .nav-container {
+
+                flex-direction:
+                    column;
+
+                padding:
+                    15px 20px;
+            }
+
+            .nav-menu {
+
+                margin-top: 12px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 14px;
+            }
+
+            .hero {
+
+                padding-top: 170px;
+            }
+        }
+
+
+        @media
+        (max-width: 768px) {
 
             h1 {
+
                 font-size: 40px;
             }
 
             h2 {
+
                 font-size: 25px;
             }
 
-            p {
+            .hero-description {
+
                 font-size: 17px;
+            }
+
+            .technology {
+
+                font-size: 16px;
+            }
+
+            .nav-menu a {
+
+                font-size: 13px;
             }
 
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-    <section class="hero">
 
-        <div class="tag">
-            ELECTRIC VEHICLE TECHNOLOGY
-        </div>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-        <h1>
-            EV TECHNOLOGY RMUTR
-        </h1>
+<header class="navbar">
 
-        <h2>
-            สาขาวิชาเทคโนโลยียานยนต์ไฟฟ้า
-        </h2>
+    <div class="nav-container">
 
-        <p>
-            เรียนรู้เทคโนโลยียานยนต์ไฟฟ้า
-            จากพื้นฐานสู่การสร้างและบูรณาการระบบจริง
-            ด้วยการเรียนรู้ทั้ง Hardware และ Software
-        </p>
+        <a href="#home"
+           class="logo">
 
-        <p class="technology">
-            Battery • Power Electronics • Embedded Systems •
-            Motor • Control • Communication
-        </p>
+            <span class="logo-ev">
+                EV
+            </span>
 
-        <div class="buttons">
+            TECHNOLOGY
 
-            <a class="button primary" href="#">
-                รู้จักหลักสูตร
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="#home">
+                Home
             </a>
 
-            <a class="button" href="#">
-                ห้องปฏิบัติการ
+            <a href="#program">
+                Program
             </a>
 
-            <a class="button" href="#">
+            <a href="#curriculum">
+                Curriculum
+            </a>
+
+            <a href="#laboratory">
+                Laboratory
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#research">
+                Research
+            </a>
+
+            <a href="#knowledge">
+                EV Knowledge
+            </a>
+
+            <a href="#admission"
+               class="nav-admission">
+
                 สมัครเรียน
+
             </a>
 
-        </div>
+        </nav>
 
-    </section>
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero"
+         id="home">
+
+
+    <div class="tag">
+
+        ELECTRIC VEHICLE TECHNOLOGY
+
+    </div>
+
+
+    <h1>
+
+        EV TECHNOLOGY RMUTR
+
+    </h1>
+
+
+    <h2>
+
+        สาขาวิชาเทคโนโลยียานยนต์ไฟฟ้า
+
+    </h2>
+
+
+    <p class="hero-description">
+
+        เรียนรู้เทคโนโลยียานยนต์ไฟฟ้า
+        จากพื้นฐานสู่การสร้างและบูรณาการระบบจริง
+        ด้วยการเรียนรู้ทั้ง Hardware และ Software
+
+    </p>
+
+
+    <p class="technology">
+
+        Battery •
+        Power Electronics •
+        Embedded Systems •
+        Motor •
+        Control •
+        Communication
+
+    </p>
+
+
+    <div class="buttons">
+
+
+        <a class="button primary"
+           href="#program">
+
+            รู้จักหลักสูตร
+
+        </a>
+
+
+        <a class="button"
+           href="#laboratory">
+
+            ห้องปฏิบัติการ
+
+        </a>
+
+
+        <a class="button"
+           href="#admission">
+
+            สมัครเรียน
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
 
 </body>
 
