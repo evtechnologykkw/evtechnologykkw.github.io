@@ -831,7 +831,261 @@
 
     line-height: 1.8;
 }
-        
+/* =========================
+   EV LABORATORY
+========================= */
+
+.ev-laboratory {
+    background: #071d2c;
+    color: white;
+    padding: 100px 30px;
+}
+
+.lab-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+
+.lab-header {
+    max-width: 950px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.lab-tag {
+    color: #4ce0c8;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.lab-title {
+    color: white;
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.25;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.lab-description {
+    max-width: 900px;
+    margin: 0 auto;
+
+    color: #c9dce7;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* FEATURE IMAGE */
+
+.lab-feature {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    min-height: 480px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.30);
+}
+
+.lab-feature img {
+    width: 100%;
+    height: 520px;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+.lab-feature-overlay {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 70px 45px 38px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(2,18,29,0.94)
+        );
+}
+
+.lab-feature-overlay span {
+    color: #4ce0c8;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.lab-feature-overlay h3 {
+    color: white;
+
+    font-size: 30px;
+
+    margin: 8px 0 8px;
+}
+
+.lab-feature-overlay p {
+    color: #d1e2ea;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    max-width: 850px;
+
+    margin: 0;
+}
+
+
+/* LAB CARDS */
+
+.lab-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.lab-card {
+    background:
+        rgba(255,255,255,0.055);
+
+    border:
+        1px solid rgba(255,255,255,0.11);
+
+    border-radius: 19px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.lab-card:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(76,224,200,0.40);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.25);
+}
+
+.lab-card-image {
+    height: 230px;
+
+    overflow: hidden;
+}
+
+.lab-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.lab-card:hover
+.lab-card-image img {
+    transform: scale(1.05);
+}
+
+.lab-card-content {
+    padding: 26px;
+}
+
+.lab-card-number {
+    color: #4ce0c8;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.lab-card h3 {
+    color: white;
+
+    font-size: 21px;
+
+    margin:
+        0 0 12px;
+}
+
+.lab-card p {
+    color: #bfd2dc;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* LAB PHILOSOPHY */
+
+.lab-learning-process {
+    margin-top: 55px;
+
+    border:
+        1px solid
+        rgba(76,224,200,0.30);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(76,224,200,0.09),
+            rgba(53,191,242,0.08)
+        );
+}
+
+.lab-learning-process span {
+    color: #4ce0c8;
+
+    font-weight: 800;
+}
+
+.lab-learning-process p {
+    color: #e0edf2;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin: 0;
+}
+
         /* =========================
            RESPONSIVE
         ========================= */
@@ -880,6 +1134,14 @@
             
             .roadmap-grid::before {
                 display: none;
+            }
+            .lab-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+            
+            .lab-feature img {
+                height: 450px;
             }
         }
 
@@ -960,6 +1222,37 @@
             }
             
             .roadmap-summary p {
+                font-size: 16px;
+            }
+            .ev-laboratory {
+                padding: 70px 20px;
+            }
+            
+            .lab-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .lab-feature {
+                min-height: auto;
+            }
+            
+            .lab-feature img {
+                height: 360px;
+            }
+            
+            .lab-feature-overlay {
+                padding: 60px 25px 25px;
+            }
+            
+            .lab-feature-overlay h3 {
+                font-size: 24px;
+            }
+            
+            .lab-description {
+                font-size: 16px;
+            }
+            
+            .lab-learning-process p {
                 font-size: 16px;
             }
         }
@@ -1717,8 +2010,6 @@
 
         </div>
 
-
-
         <!-- SUMMARY -->
 
         <div class="roadmap-summary">
@@ -1738,6 +2029,352 @@
                 <strong>
                     EV Technology
                 </strong>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- =========================
+     EV LABORATORY
+========================= -->
+
+<section class="ev-laboratory"
+         id="laboratory">
+
+    <div class="lab-container">
+
+
+        <!-- HEADER -->
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                EV LABORATORY
+            </div>
+
+            <h2 class="lab-title">
+
+                เรียนรู้จากระบบ
+                และอุปกรณ์ยานยนต์ไฟฟ้าจริง
+
+            </h2>
+
+            <p class="lab-description">
+
+                การเรียนรู้เทคโนโลยียานยนต์ไฟฟ้า
+                ไม่ควรหยุดอยู่เพียงในตำรา
+                นักศึกษาต้องได้เห็นระบบจริง
+                วัดค่าจริง ทดลองจริง
+                วิเคราะห์ปัญหา
+                และเรียนรู้การทำงานร่วมกัน
+                ของระบบย่อยภายในยานยนต์ไฟฟ้า
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE -->
+
+        <div class="lab-feature">
+
+            <img
+                src="images/lab-overview.jpg"
+                alt="EV Technology Laboratory">
+
+            <div class="lab-feature-overlay">
+
+                <span>
+                    REAL EV LEARNING ENVIRONMENT
+                </span>
+
+                <h3>
+                    EV Technology Laboratory
+                </h3>
+
+                <p>
+
+                    พื้นที่เรียนรู้และปฏิบัติการ
+                    สำหรับยานยนต์ไฟฟ้า
+                    ระบบแบตเตอรี่แรงดันสูง
+                    การชาร์จ การตรวจวัด
+                    การบำรุงรักษา
+                    และการวิเคราะห์ระบบจริง
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LAB CARDS -->
+
+        <div class="lab-grid">
+
+
+            <!-- 01 -->
+
+            <div class="lab-card">
+
+                <div class="lab-card-image">
+
+                    <img
+                        src="images/lab-ev-vehicle.jpg"
+                        alt="Electric Vehicle Laboratory">
+
+                </div>
+
+                <div class="lab-card-content">
+
+                    <div class="lab-card-number">
+                        01 — EV VEHICLE
+                    </div>
+
+                    <h3>
+                        Electric Vehicle
+                    </h3>
+
+                    <p>
+
+                        ศึกษาโครงสร้าง
+                        ระบบไฟฟ้าแรงดันสูง
+                        ระบบขับเคลื่อน
+                        การตรวจสอบ
+                        และการบำรุงรักษา
+                        ยานยนต์ไฟฟ้าจริง
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="lab-card">
+
+                <div class="lab-card-image">
+
+                    <img
+                        src="images/lab-hv-battery.jpg"
+                        alt="High Voltage Battery Laboratory">
+
+                </div>
+
+                <div class="lab-card-content">
+
+                    <div class="lab-card-number">
+                        02 — HV BATTERY
+                    </div>
+
+                    <h3>
+                        High Voltage Battery &amp; BMS
+                    </h3>
+
+                    <p>
+
+                        เรียนรู้โครงสร้าง
+                        Battery Module,
+                        Battery Pack,
+                        High-Voltage Connection,
+                        BMS และความปลอดภัย
+                        ในระบบแบตเตอรี่
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="lab-card">
+
+                <div class="lab-card-image">
+
+                    <img
+                        src="images/lab-hands-on.jpg"
+                        alt="Hands-on EV Training">
+
+                </div>
+
+                <div class="lab-card-content">
+
+                    <div class="lab-card-number">
+                        03 — HANDS-ON
+                    </div>
+
+                    <h3>
+                        EV Hands-on Training
+                    </h3>
+
+                    <p>
+
+                        ฝึกการถอดประกอบ
+                        ตรวจวัด ทดลอง
+                        เชื่อมต่ออุปกรณ์
+                        วิเคราะห์ข้อมูล
+                        และแก้ปัญหาระบบ EV
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="lab-card">
+
+                <div class="lab-card-image">
+
+                    <img
+                        src="images/hero-ev.png"
+                        alt="EV Charging and Laboratory">
+
+                </div>
+
+                <div class="lab-card-content">
+
+                    <div class="lab-card-number">
+                        04 — EV CHARGING
+                    </div>
+
+                    <h3>
+                        Charging &amp; Energy
+                    </h3>
+
+                    <p>
+
+                        ศึกษาระบบชาร์จ
+                        อุปกรณ์ EVSE
+                        การส่งผ่านพลังงาน
+                        การตรวจวัด
+                        และการจัดการพลังงาน
+                        สำหรับยานยนต์ไฟฟ้า
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="lab-card">
+
+                <div class="lab-card-image">
+
+                    <img
+                        src="images/lab-ev-motorcycle.jpg"
+                        alt="Electric Motorcycle Learning">
+
+                </div>
+
+                <div class="lab-card-content">
+
+                    <div class="lab-card-number">
+                        05 — EV MOTORCYCLE
+                    </div>
+
+                    <h3>
+                        Electric Motorcycle
+                    </h3>
+
+                    <p>
+
+                        เรียนรู้ระบบขับเคลื่อน
+                        Motor Controller,
+                        Battery,
+                        Wiring และการประยุกต์
+                        เทคโนโลยี EV
+                        กับรถจักรยานยนต์
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="lab-card">
+
+                <div class="lab-card-image">
+
+                    <img
+                        src="images/lab-training.jpg"
+                        alt="EV Training Laboratory">
+
+                </div>
+
+                <div class="lab-card-content">
+
+                    <div class="lab-card-number">
+                        06 — TRAINING LAB
+                    </div>
+
+                    <h3>
+                        EV Training Systems
+                    </h3>
+
+                    <p>
+
+                        ชุดทดลองสำหรับ
+                        การเรียนรู้ Sensor,
+                        Motor, Battery,
+                        Controller,
+                        Measurement
+                        และระบบย่อยของ EV
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- LEARNING PROCESS -->
+
+        <div class="lab-learning-process">
+
+            <p>
+
+                <span>
+                    Hands-on Learning:
+                </span>
+
+                ทฤษฎี →
+                ลงมือปฏิบัติ →
+                ตรวจวัด →
+                วิเคราะห์ →
+                แก้ปัญหา →
+                ทดสอบ →
+
+                <span>
+                    System Integration
+                </span>
 
             </p>
 
