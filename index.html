@@ -865,7 +865,7 @@
 
 .lab-title {
     color: white;
-    font-size: clamp(32px, 3.6vw, 48px);
+    font-size: clamp(32px, 3.3vw, 46px);
     line-height: 1.25;
     margin: 0 0 20px;
     font-weight: 800;
@@ -1004,6 +1004,9 @@
     object-fit: cover;
 
     transition: 0.4s;
+}
+.charging-focus {
+    object-position: 82% center;
 }
 
 .lab-card:hover
@@ -2057,10 +2060,11 @@
             </div>
 
             <h2 class="lab-title">
-
-                เรียนรู้จากระบบ
-                และอุปกรณ์ยานยนต์ไฟฟ้าจริง
-
+            
+                เรียนรู้จากระบบและอุปกรณ์จริง
+                <br>
+                ของยานยนต์ไฟฟ้า
+            
             </h2>
 
             <p class="lab-description">
@@ -2242,6 +2246,7 @@
                 <div class="lab-card-image">
 
                     <img
+                        class="charging-focus"
                         src="images/hero-ev.png"
                         alt="EV Charging and Laboratory">
 
