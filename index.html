@@ -297,7 +297,92 @@
         }
 
 
+        /* =========================
+           WHY EV TECHNOLOGY
+        ========================= */
 
+        .why-ev {
+            background: #f5f8fb;
+            color: #0a2033;
+            padding: 100px 30px;
+        }
+        
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-tag {
+            color: #0fae9a;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            color: #082238;
+            font-size: clamp(32px, 4vw, 48px);
+            margin: 15px 0;
+            font-weight: 800;
+        }
+        
+        .section-description {
+            color: #526779;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .ev-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .ev-card {
+            background: white;
+            padding: 36px 28px;
+            border-radius: 18px;
+            border: 1px solid #e3ebf2;
+            box-shadow: 0 12px 35px rgba(9, 33, 52, 0.07);
+            transition: 0.3s;
+        }
+        
+        .ev-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(9, 33, 52, 0.13);
+        }
+        
+        .card-number {
+            color: #16aa96;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        
+        .card-icon {
+            font-size: 42px;
+            margin: 20px 0;
+        }
+        
+        .ev-card h3 {
+            color: #082238;
+            font-size: 21px;
+            margin: 0 0 12px;
+        }
+        
+        .ev-card p {
+            color: #637585;
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 0;
+        }
         /* =========================
            RESPONSIVE
         ========================= */
@@ -329,6 +414,9 @@
 
                 padding-top: 170px;
             }
+            .ev-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
 
@@ -359,7 +447,13 @@
 
                 font-size: 13px;
             }
-
+            .ev-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .why-ev {
+                padding: 70px 20px;
+            }
         }
 
     </style>
@@ -516,7 +610,136 @@
 
 
 </section>
+<!-- =========================
+     WHY EV TECHNOLOGY
+========================= -->
 
+<section class="why-ev" id="program">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div class="section-tag">
+                WHY EV TECHNOLOGY?
+            </div>
+
+            <h2 class="section-title">
+                ทำไมต้องเรียนเทคโนโลยียานยนต์ไฟฟ้า
+            </h2>
+
+            <p class="section-description">
+                ยานยนต์ไฟฟ้าไม่ได้เป็นเพียงการเปลี่ยนเครื่องยนต์
+                เป็นมอเตอร์ไฟฟ้า แต่เป็นการบูรณาการองค์ความรู้
+                ด้านไฟฟ้า อิเล็กทรอนิกส์ เครื่องกล ระบบสมองกลฝังตัว
+                ระบบควบคุม และการสื่อสารเข้าด้วยกัน
+            </p>
+
+        </div>
+
+
+        <div class="ev-cards">
+
+            <!-- CARD 1 -->
+            <div class="ev-card">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <div class="card-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Future Technology
+                </h3>
+
+                <p>
+                    เรียนรู้เทคโนโลยีที่กำลังเปลี่ยนแปลง
+                    อุตสาหกรรมยานยนต์ พลังงาน และระบบขนส่ง
+                    ของโลก
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="ev-card">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <div class="card-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Hands-on Learning
+                </h3>
+
+                <p>
+                    เรียนรู้จากอุปกรณ์ ห้องปฏิบัติการ
+                    และระบบยานยนต์ไฟฟ้าจริง
+                    ผ่านการออกแบบ ทดลอง และแก้ปัญหา
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="ev-card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <div class="card-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    System Integration
+                </h3>
+
+                <p>
+                    เข้าใจการทำงานร่วมกันของ Battery,
+                    Power Electronics, Embedded Systems,
+                    Motor, Control และ Communication
+                </p>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+            <div class="ev-card">
+
+                <div class="card-number">
+                    04
+                </div>
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Career Ready
+                </h3>
+
+                <p>
+                    เตรียมทักษะสำหรับอุตสาหกรรม EV,
+                    Electronics, Automation, Energy
+                    และเทคโนโลยีสมัยใหม่
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 </body>
 
