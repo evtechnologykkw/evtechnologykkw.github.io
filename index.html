@@ -1088,6 +1088,251 @@
 
     margin: 0;
 }
+/* =========================
+   STUDENT PROJECTS
+========================= */
+
+.student-projects {
+    background: #f4f8fb;
+    color: #082238;
+    padding: 100px 30px;
+}
+
+.projects-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+
+.projects-header {
+    max-width: 950px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.projects-tag {
+    color: #0fae9a;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.projects-title {
+    color: #082238;
+    font-size: clamp(32px, 3.5vw, 48px);
+    line-height: 1.25;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.projects-description {
+    color: #5b7082;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* GRID */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+
+/* CARD */
+
+.project-card {
+    background: white;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid #e1eaf1;
+
+    box-shadow:
+        0 12px 35px rgba(9, 33, 52, 0.08);
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 48px rgba(9, 33, 52, 0.15);
+
+    border-color:
+        rgba(15,174,154,0.35);
+}
+
+
+/* IMAGE */
+
+.project-image {
+    height: 245px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.45s;
+}
+
+.project-card:hover
+.project-image img {
+    transform: scale(1.05);
+}
+
+
+/* CONTENT */
+
+.project-content {
+    padding: 27px;
+}
+
+.project-number {
+    color: #0fae9a;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    color: #082238;
+
+    font-size: 22px;
+
+    line-height: 1.35;
+
+    margin: 0 0 12px;
+}
+
+.project-card p {
+    color: #617686;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 0 0 18px;
+}
+
+
+/* TECHNOLOGY TAGS */
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.project-tech span {
+    background: #eef8f7;
+
+    color: #087f74;
+
+    border:
+        1px solid rgba(15,174,154,0.18);
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* FEATURED FINAL PROJECT */
+
+.project-card.featured-project {
+    background:
+        linear-gradient(
+            135deg,
+            #08283b,
+            #075157
+        );
+
+    border-color: transparent;
+}
+
+.featured-project h3 {
+    color: white;
+}
+
+.featured-project p {
+    color: #cde0e8;
+}
+
+.featured-project .project-number {
+    color: #4ce0c8;
+}
+
+.featured-project .project-tech span {
+    background:
+        rgba(255,255,255,0.08);
+
+    color: #65e6d0;
+
+    border-color:
+        rgba(101,230,208,0.20);
+}
+
+
+/* PROJECT PROCESS */
+
+.project-process {
+    margin-top: 55px;
+
+    border-radius: 20px;
+
+    padding: 31px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15,174,154,0.08),
+            rgba(53,191,242,0.08)
+        );
+
+    border:
+        1px solid
+        rgba(15,174,154,0.22);
+}
+
+.project-process p {
+    margin: 0;
+
+    color: #40586a;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+.project-process strong {
+    color: #0b9f8e;
+}
 
         /* =========================
            RESPONSIVE
@@ -1145,6 +1390,9 @@
             
             .lab-feature img {
                 height: 450px;
+            }
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1256,6 +1504,26 @@
             }
             
             .lab-learning-process p {
+                font-size: 16px;
+            }
+            .student-projects {
+                padding: 70px 20px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .projects-description {
+                font-size: 16px;
+            }
+            
+            .project-image {
+                height: 230px;
+            }
+            
+            .project-process p {
                 font-size: 16px;
             }
         }
@@ -2380,6 +2648,375 @@
                 <span>
                     System Integration
                 </span>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- =========================
+     STUDENT PROJECTS
+========================= -->
+
+<section class="student-projects"
+         id="projects">
+
+    <div class="projects-container">
+
+
+        <!-- HEADER -->
+
+        <div class="projects-header">
+
+            <div class="projects-tag">
+                STUDENT PROJECTS
+            </div>
+
+            <h2 class="projects-title">
+
+                เรียนรู้ด้วยการสร้าง
+                ทดลอง และแก้ปัญหาจริง
+
+            </h2>
+
+            <p class="projects-description">
+
+                Project-Based Learning
+                ช่วยให้นักศึกษานำความรู้จาก
+                Embedded Systems,
+                Electronics,
+                Power Electronics,
+                Motor Control,
+                Battery และระบบควบคุม
+                มาประยุกต์สร้างระบบจริง
+
+            </p>
+
+        </div>
+
+
+
+        <!-- PROJECT GRID -->
+
+        <div class="projects-grid">
+
+
+            <!-- 01 -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/project-ev-motorcycle.jpg"
+                        alt="EV Motorcycle Project">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        01 — EV CONVERSION
+                    </div>
+
+                    <h3>
+                        EV Motorcycle Conversion
+                    </h3>
+
+                    <p>
+
+                        ออกแบบและพัฒนาระบบ
+                        ขับเคลื่อนรถจักรยานยนต์ไฟฟ้า
+                        ตั้งแต่ Battery,
+                        Controller,
+                        Motor,
+                        Wiring
+                        ไปจนถึงการทดสอบระบบ
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Battery</span>
+                        <span>BMS</span>
+                        <span>Motor</span>
+                        <span>Controller</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/project-pcb.jpg"
+                        alt="PCB and Embedded System Project">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        02 — PCB &amp; EMBEDDED
+                    </div>
+
+                    <h3>
+                        PCB &amp; Embedded Systems
+                    </h3>
+
+                    <p>
+
+                        พัฒนา Schematic,
+                        PCB,
+                        Sensor Interface
+                        และ Embedded Controller
+                        สำหรับงานควบคุม
+                        และระบบยานยนต์ไฟฟ้า
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>PCB</span>
+                        <span>MCU</span>
+                        <span>DSP</span>
+                        <span>Sensor</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/project-motor-control.jpg"
+                        alt="PMSM Motor Control Project">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        03 — MOTOR CONTROL
+                    </div>
+
+                    <h3>
+                        PMSM / IPMSM Motor Control
+                    </h3>
+
+                    <p>
+
+                        ทดลองระบบควบคุมมอเตอร์
+                        PMSM/IPMSM
+                        ด้วย Inverter,
+                        Current Feedback,
+                        Position Sensor
+                        และ Control Algorithm
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>PMSM</span>
+                        <span>FOC</span>
+                        <span>DSP</span>
+                        <span>Inverter</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/project-battery.jpg"
+                        alt="Battery and BMS Project">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        04 — BATTERY
+                    </div>
+
+                    <h3>
+                        Battery &amp; BMS
+                    </h3>
+
+                    <p>
+
+                        ศึกษาและพัฒนาระบบ
+                        Battery Pack,
+                        Cell Monitoring,
+                        Temperature,
+                        Protection
+                        และ Battery Management System
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Battery</span>
+                        <span>BMS</span>
+                        <span>Safety</span>
+                        <span>Monitoring</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/project-inverter.jpg"
+                        alt="Power Electronics and Inverter Project">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        05 — POWER ELECTRONICS
+                    </div>
+
+                    <h3>
+                        Power Electronics &amp; Inverter
+                    </h3>
+
+                    <p>
+
+                        ออกแบบและทดลอง
+                        Gate Driver,
+                        Power Semiconductor,
+                        DC-Link
+                        และ 3-Phase Inverter
+                        สำหรับระบบขับเคลื่อนไฟฟ้า
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>MOSFET</span>
+                        <span>IGBT</span>
+                        <span>SiC</span>
+                        <span>Inverter</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="project-card featured-project">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/project-system-integration.jpg"
+                        alt="EV System Integration Project">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        06 — SYSTEM INTEGRATION
+                    </div>
+
+                    <h3>
+                        EV System Integration
+                    </h3>
+
+                    <p>
+
+                        บูรณาการ Battery,
+                        Power Electronics,
+                        Embedded System,
+                        Motor,
+                        Control
+                        และ Communication
+                        ให้ทำงานร่วมกันเป็นระบบ EV
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Hardware</span>
+                        <span>Software</span>
+                        <span>Control</span>
+                        <span>EV System</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PROJECT PROCESS -->
+
+        <div class="project-process">
+
+            <p>
+
+                <strong>
+                    Project-Based Learning:
+                </strong>
+
+                Knowledge →
+                Design →
+                Build →
+                Test →
+                Analyze →
+                Improve →
+
+                <strong>
+                    Innovation
+                </strong>
 
             </p>
 
