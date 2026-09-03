@@ -592,6 +592,246 @@
     color: #4ce0c8;
     font-size: 21px;
 }
+/* =========================
+   LEARNING ROADMAP
+========================= */
+
+.learning-roadmap {
+    background: #f5f8fb;
+    color: #082238;
+    padding: 100px 30px;
+}
+
+.roadmap-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.roadmap-header {
+    max-width: 950px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.roadmap-tag {
+    color: #0fae9a;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.roadmap-title {
+    color: #082238;
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.25;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.roadmap-description {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #5b7082;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* ROADMAP GRID */
+
+.roadmap-grid {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 26px;
+
+    margin-top: 55px;
+}
+
+
+/* เส้นเชื่อม */
+
+.roadmap-grid::before {
+    content: "";
+
+    position: absolute;
+
+    top: 41px;
+    left: 8%;
+    right: 8%;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0fae9a,
+            #3bc8ff,
+            #0fae9a
+        );
+
+    opacity: 0.35;
+
+    z-index: 0;
+}
+
+
+/* CARD */
+
+.roadmap-item {
+    position: relative;
+    z-index: 1;
+
+    background: white;
+
+    border: 1px solid #e1eaf1;
+
+    border-radius: 18px;
+
+    padding: 28px 22px;
+
+    min-height: 245px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px rgba(9, 33, 52, 0.07);
+
+    transition: 0.3s;
+}
+
+.roadmap-item:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 45px rgba(9, 33, 52, 0.13);
+
+    border-color: rgba(15,174,154,0.35);
+}
+
+
+/* NUMBER */
+
+.roadmap-number {
+    width: 56px;
+    height: 56px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0fae9a,
+            #35bff2
+        );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px rgba(15,174,154,0.22);
+}
+
+.roadmap-item h3 {
+    color: #082238;
+
+    font-size: 19px;
+
+    margin: 0 0 12px;
+
+    line-height: 1.4;
+}
+
+.roadmap-item p {
+    color: #657988;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    margin: 0;
+}
+
+
+/* FINAL STEP */
+
+.roadmap-item.final-step {
+    background:
+        linear-gradient(
+            135deg,
+            #08263a,
+            #07545a
+        );
+
+    border-color: transparent;
+}
+
+.final-step .roadmap-number {
+    background:
+        linear-gradient(
+            135deg,
+            #45dfc2,
+            #34bfff
+        );
+
+    color: #052538;
+}
+
+.final-step h3 {
+    color: white;
+}
+
+.final-step p {
+    color: #cde3e9;
+}
+
+
+/* ROADMAP SUMMARY */
+
+.roadmap-summary {
+    margin-top: 55px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15,174,154,0.08),
+            rgba(53,191,242,0.09)
+        );
+
+    border:
+        1px solid rgba(15,174,154,0.22);
+}
+
+.roadmap-summary strong {
+    color: #0b9f8e;
+}
+
+.roadmap-summary p {
+    margin: 0;
+
+    color: #40586a;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
         
         /* =========================
            RESPONSIVE
@@ -634,6 +874,13 @@
             .engineer-content {
                 max-width: 850px;
                 margin: auto;
+            }
+            .roadmap-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .roadmap-grid::before {
+                display: none;
             }
         }
 
@@ -690,6 +937,31 @@
             
             .integration-formula {
                 font-size: 15px;
+            }
+            .learning-roadmap {
+                padding: 70px 20px;
+            }
+            
+            .roadmap-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            
+            .roadmap-item {
+                min-height: auto;
+                text-align: left;
+            }
+            
+            .roadmap-number {
+                margin: 0 0 18px;
+            }
+            
+            .roadmap-description {
+                font-size: 16px;
+            }
+            
+            .roadmap-summary p {
+                font-size: 16px;
             }
         }
 
@@ -1176,6 +1448,305 @@
 
 </p>
 </div>
+</section>
+<!-- =========================
+     LEARNING ROADMAP
+========================= -->
+
+<section class="learning-roadmap" id="curriculum">
+
+    <div class="roadmap-container">
+
+
+        <!-- HEADER -->
+
+        <div class="roadmap-header">
+
+            <div class="roadmap-tag">
+                LEARNING ROADMAP
+            </div>
+
+            <h2 class="roadmap-title">
+
+                จากพื้นฐานระบบสมองกลฝังตัว
+                สู่เทคโนโลยียานยนต์ไฟฟ้า
+
+            </h2>
+
+            <p class="roadmap-description">
+
+                การเรียนรู้เทคโนโลยียานยนต์ไฟฟ้า
+                ควรเริ่มจากองค์ความรู้พื้นฐาน
+                แล้วค่อยพัฒนาความสามารถด้าน Hardware,
+                Software และ Control
+                จนสามารถบูรณาการเป็นระบบขับเคลื่อน
+                และระบบยานยนต์ไฟฟ้าได้จริง
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ROADMAP -->
+
+        <div class="roadmap-grid">
+
+
+            <!-- 01 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    01
+                </div>
+
+                <h3>
+                    Microcontroller
+                </h3>
+
+                <p>
+                    เรียนรู้โครงสร้างไมโครคอนโทรลเลอร์
+                    Digital I/O, Timer, Interrupt,
+                    ADC และ PWM
+                </p>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    02
+                </div>
+
+                <h3>
+                    Embedded Programming
+                </h3>
+
+                <p>
+                    พัฒนาโปรแกรมระบบสมองกลฝังตัว
+                    เพื่ออ่าน Sensor ประมวลผล
+                    และควบคุมอุปกรณ์แบบ Real-Time
+                </p>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    03
+                </div>
+
+                <h3>
+                    Sensors &amp;
+                    Signal Processing
+                </h3>
+
+                <p>
+                    เรียนรู้การวัดแรงดัน กระแส
+                    ตำแหน่ง ความเร็ว อุณหภูมิ
+                    และการปรับสภาพสัญญาณ
+                </p>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    04
+                </div>
+
+                <h3>
+                    PCB Design
+                </h3>
+
+                <p>
+                    จาก Schematic สู่ PCB จริง
+                    โดยคำนึงถึง Grounding,
+                    Isolation, EMI/EMC
+                    และความปลอดภัย
+                </p>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    05
+                </div>
+
+                <h3>
+                    Power Electronics
+                </h3>
+
+                <p>
+                    เรียนรู้ Semiconductor,
+                    Converter และการควบคุม
+                    การแปลงพลังงานไฟฟ้า
+                </p>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    06
+                </div>
+
+                <h3>
+                    Gate Driver
+                </h3>
+
+                <p>
+                    เชื่อมระบบควบคุมกับ
+                    MOSFET, IGBT หรือ SiC
+                    พร้อม Isolation และ Protection
+                </p>
+
+            </div>
+
+
+
+            <!-- 07 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    07
+                </div>
+
+                <h3>
+                    3-Phase Inverter
+                </h3>
+
+                <p>
+                    สร้างและควบคุม Inverter
+                    สำหรับแปลง DC
+                    เป็นไฟฟ้า AC สามเฟส
+                </p>
+
+            </div>
+
+
+
+            <!-- 08 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    08
+                </div>
+
+                <h3>
+                    Motor Control
+                </h3>
+
+                <p>
+                    ควบคุมแรงบิด ความเร็ว
+                    กระแส และแรงดัน
+                    ด้วย Control Algorithm
+                </p>
+
+            </div>
+
+
+
+            <!-- 09 -->
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-number">
+                    09
+                </div>
+
+                <h3>
+                    PMSM / IPMSM Drive
+                </h3>
+
+                <p>
+                    บูรณาการ Motor,
+                    Inverter, Sensor
+                    และ Field-Oriented Control
+                    เป็นระบบขับเคลื่อนจริง
+                </p>
+
+            </div>
+
+
+
+            <!-- 10 -->
+
+            <div class="roadmap-item final-step">
+
+                <div class="roadmap-number">
+                    10
+                </div>
+
+                <h3>
+                    EV Technology
+                </h3>
+
+                <p>
+                    รวม Battery, Power Electronics,
+                    Embedded Systems,
+                    Motor, Control และ Communication
+                    เป็นระบบยานยนต์ไฟฟ้า
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SUMMARY -->
+
+        <div class="roadmap-summary">
+
+            <p>
+
+                <strong>
+                    แนวคิดสำคัญ:
+                </strong>
+
+                เริ่มจากพื้นฐาน →
+                เข้าใจระบบย่อย →
+                สร้าง Hardware และ Software →
+                ทดสอบ →
+                บูรณาการ →
+
+                <strong>
+                    EV Technology
+                </strong>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
 </section>
 </body>
 
