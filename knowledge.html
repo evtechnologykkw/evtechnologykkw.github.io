@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+EV Knowledge Hub | EV Technology RMUTR
+</title>
+
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        "Tahoma",
+        sans-serif;
+
+    background: #f4f8fb;
+
+    color: #082238;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.topbar {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    min-height: 82px;
+
+    padding: 0 4%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: #061827;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.brand {
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+.brand span {
+    color: #4ce0c8;
+}
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 27px;
+
+    white-space: nowrap;
+}
+
+.nav-links a {
+    color: #dce8ed;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: #4ce0c8;
+}
+
+.nav-admission {
+    padding: 11px 22px;
+
+    border:
+        1px solid #4ce0c8;
+
+    border-radius: 26px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.knowledge-page-hero {
+    padding: 90px 30px 70px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eef5f8,
+            #f8fbfc
+        );
+}
+
+.page-tag {
+    color: #0aa590;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 16px;
+}
+
+.knowledge-page-hero h1 {
+    max-width: 950px;
+
+    margin: 0 auto 22px;
+
+    color: #082238;
+
+    font-size:
+        clamp(36px, 4vw, 55px);
+
+    line-height: 1.25;
+}
+
+.knowledge-page-hero p {
+    max-width: 880px;
+
+    margin: auto;
+
+    color: #597182;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BLOG SOURCE
+========================= */
+
+.blog-source {
+    max-width: 1200px;
+
+    margin: 50px auto 0;
+
+    padding: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    text-align: left;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #08283b,
+            #075157
+        );
+
+    color: white;
+}
+
+.blog-source-label {
+    color: #4ce0c8;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.blog-source h2 {
+    margin: 8px 0 8px;
+
+    font-size: 25px;
+}
+
+.blog-source p {
+    margin: 0;
+
+    color: #c8dae3;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.blog-source-button {
+    flex-shrink: 0;
+
+    padding: 13px 23px;
+
+    border-radius: 25px;
+
+    background: #20b89e;
+
+    color: white;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.category {
+    max-width: 1320px;
+
+    margin: auto;
+
+    padding: 85px 30px 15px;
+
+    scroll-margin-top: 90px;
+}
+
+.category-header {
+    max-width: 900px;
+
+    margin-bottom: 35px;
+}
+
+.category-number {
+    color: #0aa590;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.category h2 {
+    margin: 0 0 12px;
+
+    color: #082238;
+
+    font-size:
+        clamp(29px, 3vw, 39px);
+}
+
+.category-description {
+    margin: 0;
+
+    color: #617687;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================
+   ARTICLE GRID
+========================= */
+
+.article-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.article-card {
+    min-height: 270px;
+
+    padding: 27px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 20px;
+
+    background: white;
+
+    border:
+        1px solid #dde8ee;
+
+    box-shadow:
+        0 12px 30px
+        rgba(8,34,56,0.07);
+
+    transition: 0.25s;
+}
+
+a.article-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(15,174,154,0.38);
+
+    box-shadow:
+        0 20px 42px
+        rgba(8,34,56,0.12);
+}
+
+.article-source {
+    color: #0aa590;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 15px;
+}
+
+.article-card h3 {
+    margin: 0 0 13px;
+
+    color: #082238;
+
+    font-size: 20px;
+
+    line-height: 1.45;
+}
+
+.article-card p {
+    margin: 0;
+
+    color: #607687;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.article-open {
+    margin-top: auto;
+
+    padding-top: 22px;
+
+    color: #099887;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   COMING SOON
+========================= */
+
+.coming-soon {
+    background:
+        linear-gradient(
+            135deg,
+            #eef8f7,
+            #edf6fb
+        );
+
+    border:
+        1px dashed
+        rgba(15,174,154,0.35);
+
+    box-shadow: none;
+}
+
+.coming-label {
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    color: #0a9a89;
+
+    font-weight: 800;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.knowledge-footer {
+    margin-top: 90px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    background: #061827;
+
+    color: #c8d9e1;
+}
+
+.knowledge-footer strong {
+    color: #4ce0c8;
+}
+
+.knowledge-footer a {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 22px;
+
+    color: white;
+
+    border:
+        1px solid #4ce0c8;
+
+    border-radius: 25px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+
+    .article-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .knowledge-page-hero {
+        padding:
+            65px 20px 50px;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category {
+        padding:
+            65px 20px 10px;
+    }
+
+    .blog-source {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="topbar">
+
+    <a
+        href="index.html#home"
+        class="brand">
+
+        <span>EV</span>
+        TECHNOLOGY
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html#home">
+            Home
+        </a>
+
+        <a href="index.html#program">
+            Program
+        </a>
+
+        <a href="index.html#curriculum">
+            Curriculum
+        </a>
+
+        <a href="index.html#laboratory">
+            Laboratory
+        </a>
+
+        <a href="index.html#projects">
+            Projects
+        </a>
+
+        <a href="index.html#research">
+            Research
+        </a>
+
+        <a
+            href="knowledge.html"
+            class="active">
+
+            EV Knowledge
+
+        </a>
+
+        <a
+            href="index.html#admission"
+            class="nav-admission">
+
+            สมัครเรียน
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="knowledge-page-hero">
+
+    <div class="page-tag">
+
+        EV KNOWLEDGE PORTAL
+
+    </div>
+
+    <h1>
+
+        จากองค์ความรู้พื้นฐาน
+        สู่การบูรณาการระบบยานยนต์ไฟฟ้า
+
+    </h1>
+
+    <p>
+
+        รวบรวมองค์ความรู้
+        บทเรียน
+        งานทดลอง
+        และประสบการณ์ด้าน
+        Embedded Systems,
+        PCB Design,
+        Power Electronics,
+        Motor Control
+        และเทคโนโลยียานยนต์ไฟฟ้า
+
+    </p>
+
+
+    <div class="blog-source">
+
+        <div>
+
+            <div class="blog-source-label">
+
+                ORIGINAL KNOWLEDGE ARCHIVE
+
+            </div>
+
+            <h2>
+
+                เว็บบล็อกระบบสมองกลฝังตัว
+                (Embedded System Blog)
+
+            </h2>
+
+            <p>
+
+                คลังองค์ความรู้เดิมที่สะสมจาก
+                การเรียนการสอน
+                การทดลอง
+                การออกแบบวงจร
+                และการพัฒนาระบบสมองกลฝังตัว
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="https://songklod2524.blogspot.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="blog-source-button">
+
+            เปิดคลังบทความเดิม ↗
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     01 FUNDAMENTALS
+================================================== -->
+
+<section class="category"
+         id="fundamentals">
+
+    <div class="category-header">
+
+        <div class="category-number">
+
+            KNOWLEDGE AREA 01
+
+        </div>
+
+        <h2>
+
+            EV System Fundamentals
+
+        </h2>
+
+        <p class="category-description">
+
+            เริ่มจากการมองยานยนต์ไฟฟ้าเป็นระบบ
+            และทำความเข้าใจความสัมพันธ์ระหว่าง
+            Battery,
+            Inverter,
+            Motor,
+            Embedded Controller
+            และ Communication
+
+        </p>
+
+    </div>
+
+
+    <div class="article-grid">
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2026/09/embedded-system-ev-electric-vehicle-ev.html?utm_source=chatgpt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+                EMBEDDED SYSTEM BLOG
+            </div>
+
+            <h3>
+
+                ยานยนต์ไฟฟ้าไม่ได้มีแค่แบตเตอรี่:
+                จาก Embedded System
+                สู่ระบบขับเคลื่อน EV
+
+            </h3>
+
+            <p>
+
+                บทความภาพรวมที่เชื่อม
+                Embedded System,
+                PCB,
+                Inverter,
+                Motor Control
+                และ System Integration
+                เข้ากับเทคโนโลยียานยนต์ไฟฟ้า
+
+            </p>
+
+            <div class="article-open">
+
+                อ่านบทความเต็ม ↗
+
+            </div>
+
+        </a>
+
+
+        <div class="article-card coming-soon">
+
+            <div class="article-source">
+
+                EV KNOWLEDGE
+
+            </div>
+
+            <h3>
+
+                EV Architecture
+                และ Energy Flow
+
+            </h3>
+
+            <p>
+
+                บทเรียนใหม่สำหรับอธิบาย
+                โครงสร้างระบบ EV
+                และเส้นทางการไหลของพลังงาน
+
+            </p>
+
+            <div class="coming-label">
+
+                กำลังจัดทำบทเรียนใหม่
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     02 BATTERY
+================================================== -->
+
+<section class="category"
+         id="battery">
+
+    <div class="category-header">
+
+        <div class="category-number">
+
+            KNOWLEDGE AREA 02
+
+        </div>
+
+        <h2>
+
+            Battery &amp; BMS
+
+        </h2>
+
+        <p class="category-description">
+
+            Cell,
+            Module,
+            Pack,
+            SOC,
+            SOH,
+            Cell Balancing,
+            Protection
+            และ Battery Management System
+
+        </p>
+
+    </div>
+
+
+    <div class="article-grid">
+
+        <div class="article-card coming-soon">
+
+            <div class="article-source">
+                NEW EV ARTICLE
+            </div>
+
+            <h3>
+                Battery Cell,
+                Module และ Pack
+            </h3>
+
+            <p>
+                พื้นฐานโครงสร้าง
+                ระบบแบตเตอรี่แรงดันสูง
+                สำหรับยานยนต์ไฟฟ้า
+            </p>
+
+            <div class="coming-label">
+                กำลังจัดทำบทเรียนใหม่
+            </div>
+
+        </div>
+
+
+        <div class="article-card coming-soon">
+
+            <div class="article-source">
+                NEW EV ARTICLE
+            </div>
+
+            <h3>
+                Battery Management System
+            </h3>
+
+            <p>
+                ทำความเข้าใจ BMS,
+                Monitoring,
+                Protection,
+                SOC และ SOH
+            </p>
+
+            <div class="coming-label">
+                กำลังจัดทำบทเรียนใหม่
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     03 POWER ELECTRONICS
+================================================== -->
+
+<section class="category"
+         id="power-electronics">
+
+    <div class="category-header">
+
+        <div class="category-number">
+            KNOWLEDGE AREA 03
+        </div>
+
+        <h2>
+            Power Electronics &amp; Inverter
+        </h2>
+
+        <p class="category-description">
+
+            Power Semiconductor,
+            Gate Driver,
+            PWM,
+            PCB
+            และ Inverter
+            คือพื้นฐานสำคัญของระบบขับเคลื่อนไฟฟ้า
+
+        </p>
+
+    </div>
+
+
+    <div class="article-grid">
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2023/04/blog-post.html?utm_source=chatgpt.comE"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+                EMBEDDED SYSTEM BLOG
+            </div>
+
+            <h3>
+                การประกอบอินเวอร์เตอร์
+                เพื่อศึกษาการทำงานของ Inverter
+            </h3>
+
+            <p>
+                เรียนรู้ IGBT/MOSFET,
+                Microcontroller,
+                Gate Driver
+                และการสร้าง PWM
+            </p>
+
+            <div class="article-open">
+                อ่านบทความเต็ม ↗
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2023/08/gerber-file-altium-pcb.html?utm_source=chatgpt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+                EMBEDDED SYSTEM BLOG
+            </div>
+
+            <h3>
+                การสร้าง Gerber File
+                ด้วย Altium Designer
+            </h3>
+
+            <p>
+                ขั้นตอนสำคัญของ PCB Design
+                จากงานออกแบบ
+                ไปสู่ไฟล์สำหรับการผลิตจริง
+            </p>
+
+            <div class="article-open">
+                อ่านบทความเต็ม ↗
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     04 MOTOR CONTROL
+================================================== -->
+
+<section class="category"
+         id="motor-control">
+
+    <div class="category-header">
+
+        <div class="category-number">
+            KNOWLEDGE AREA 04
+        </div>
+
+        <h2>
+            Electric Motor &amp; Motor Control
+        </h2>
+
+        <p class="category-description">
+
+            เชื่อมโยง Electric Motor,
+            Sensor,
+            Embedded Controller
+            และ Control Algorithm
+            เข้าด้วยกัน
+
+        </p>
+
+    </div>
+
+
+    <div class="article-grid">
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2017/03/figure-1.html?utm_source=chatgpt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+                EMBEDDED SYSTEM BLOG
+            </div>
+
+            <h3>
+
+                Field-Oriented Control
+                for PMSM
+
+            </h3>
+
+            <p>
+
+                พื้นฐาน FOC
+                สำหรับ Permanent Magnet
+                Synchronous Motor
+
+            </p>
+
+            <div class="article-open">
+
+                อ่านบทความเต็ม ↗
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2014/10/dc-motor-speed-control-by-stm32f4.html?utm_source=chatgpt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+                EMBEDDED SYSTEM BLOG
+            </div>
+
+            <h3>
+
+                DC Motor Speed Control
+                by STM32F4 Discovery
+
+            </h3>
+
+            <p>
+
+                ตัวอย่างการนำ
+                Embedded Controller
+                มาใช้ควบคุมความเร็วมอเตอร์
+
+            </p>
+
+            <div class="article-open">
+
+                อ่านบทความเต็ม ↗
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     05 EMBEDDED SYSTEMS
+================================================== -->
+
+<section class="category"
+         id="embedded-can">
+
+    <div class="category-header">
+
+        <div class="category-number">
+
+            KNOWLEDGE AREA 05
+
+        </div>
+
+        <h2>
+
+            Embedded Systems &amp;
+            Vehicle Control
+
+        </h2>
+
+        <p class="category-description">
+
+            Microcontroller,
+            DSP,
+            PWM,
+            Sensor Interface,
+            Real-Time Control
+            และ Controller Hardware
+            คือพื้นฐานของระบบควบคุม EV
+
+        </p>
+
+    </div>
+
+
+    <div class="article-grid">
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2022/08/c2000.html?utm_source=chatgpt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+                EMBEDDED SYSTEM BLOG
+            </div>
+
+            <h3>
+                การโปรแกรม C2000
+            </h3>
+
+            <p>
+                พื้นฐานการใช้งาน
+                C2000 MCU
+                สำหรับงาน PWM
+                และ Control
+            </p>
+
+            <div class="article-open">
+                อ่านบทความเต็ม ↗
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2022/08/shield-c2000-launchpad-development-kit.html?utm_source=chatgpt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+                EMBEDDED SYSTEM BLOG
+            </div>
+
+            <h3>
+
+                C2000 LaunchPad
+                Shield Development Board
+
+            </h3>
+
+            <p>
+
+                ตัวอย่าง Hardware Interface
+                สำหรับพัฒนาระบบควบคุม
+                และงานทดลองจริง
+
+            </p>
+
+            <div class="article-open">
+                อ่านบทความเต็ม ↗
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2026/07/dspic30f-board-pcb-design.html?utm_source=chatgpt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+                EMBEDDED SYSTEM BLOG
+            </div>
+
+            <h3>
+                dsPIC30F Board PCB Design
+            </h3>
+
+            <p>
+                ตัวอย่างการพัฒนา
+                Controller PCB
+                พร้อม Schematic,
+                Program และ Library
+            </p>
+
+            <div class="article-open">
+                อ่านบทความเต็ม ↗
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     06 CHARGING & INTEGRATION
+================================================== -->
+
+<section class="category"
+         id="charging-integration">
+
+    <div class="category-header">
+
+        <div class="category-number">
+
+            KNOWLEDGE AREA 06
+
+        </div>
+
+        <h2>
+
+            Charging, Energy
+            &amp; System Integration
+
+        </h2>
+
+        <p class="category-description">
+
+            จากระบบชาร์จ
+            ไปสู่การบูรณาการ
+            Battery,
+            Power Electronics,
+            Controller,
+            Motor
+            และ Communication
+
+        </p>
+
+    </div>
+
+
+    <div class="article-grid">
+
+
+        <a
+            class="article-card"
+            href="https://songklod2524.blogspot.com/2026/09/embedded-system-ev-electric-vehicle-ev.html?utm_source=chatgpt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="article-source">
+
+                EMBEDDED SYSTEM BLOG
+
+            </div>
+
+            <h3>
+
+                EV Engineer:
+                Hardware,
+                Software
+                และ System Integration
+
+            </h3>
+
+            <p>
+
+                มองภาพรวมว่า
+                Battery,
+                Power Electronics,
+                Embedded System,
+                Motor,
+                Control
+                และ Communication
+                ทำงานร่วมกันอย่างไร
+
+            </p>
+
+            <div class="article-open">
+
+                อ่านบทความเต็ม ↗
+
+            </div>
+
+        </a>
+
+
+        <div class="article-card coming-soon">
+
+            <div class="article-source">
+                NEW EV ARTICLE
+            </div>
+
+            <h3>
+                EV Charging &amp; EVSE
+            </h3>
+
+            <p>
+                AC Charging,
+                DC Charging,
+                On-Board Charger
+                และ Charging Communication
+            </p>
+
+            <div class="coming-label">
+                กำลังจัดทำบทเรียนใหม่
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="knowledge-footer">
+
+    <p>
+
+        <strong>
+            EV Knowledge Hub
+        </strong>
+
+        <br><br>
+
+        เรียนรู้จากพื้นฐาน
+        → ลงมือปฏิบัติ
+        → ทดลอง
+        → วิจัย
+        → บูรณาการเป็นระบบจริง
+
+    </p>
+
+    <a href="index.html#ev-knowledge">
+
+        ← กลับหน้า EV Knowledge
+
+    </a>
+
+</footer>
+
+
+</body>
+
+</html>
