@@ -705,17 +705,23 @@ a.article-card:hover {
 
     border-radius: 25px;
 }
-
-
-/* =========================
+/* ==================================================
    RESPONSIVE
-========================= */
+================================================== */
+
+
+/* ---------- TABLET ---------- */
 
 @media (max-width: 1050px) {
 
     .article-grid {
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .video-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .topbar {
@@ -728,48 +734,27 @@ a.article-card:hover {
     .nav-links {
         width: 100%;
 
+        max-width: 100%;
+
         overflow-x: auto;
 
+        overflow-y: hidden;
+
         padding-bottom: 5px;
+
+        -webkit-overflow-scrolling: touch;
     }
 
 }
 
 
-@media (max-width: 700px) {
 
-    .knowledge-page-hero {
-        padding:
-            65px 20px 50px;
-    }
-
-    .article-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .category {
-        padding:
-            65px 20px 10px;
-    }
-
-    .blog-source {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-}
-
-/* ==================================================
-   FINAL MOBILE RESPONSIVE FIX
-   Place immediately before </style>
-================================================== */
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 700px) {
 
-    /* --------------------------------
-       PREVENT PAGE HORIZONTAL OVERFLOW
-    -------------------------------- */
+
+    /* Prevent whole page from overflowing */
 
     html,
     body {
@@ -779,15 +764,19 @@ a.article-card:hover {
     }
 
 
-    /* --------------------------------
-       MOBILE NAVIGATION
-    -------------------------------- */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .topbar {
         width: 100%;
 
+        min-height: 0;
+
         padding:
-            18px 20px 12px;
+            18px 18px 12px;
+
+        display: flex;
 
         flex-direction: column;
 
@@ -796,9 +785,11 @@ a.article-card:hover {
         gap: 16px;
     }
 
+
     .brand {
-        font-size: 24px;
+        font-size: 23px;
     }
+
 
     .nav-links {
         width: 100%;
@@ -815,19 +806,20 @@ a.article-card:hover {
 
         overflow-y: hidden;
 
-        padding:
-            0 0 10px;
-
         white-space: nowrap;
+
+        padding-bottom: 8px;
 
         -webkit-overflow-scrolling: touch;
 
         scrollbar-width: none;
     }
 
+
     .nav-links::-webkit-scrollbar {
         display: none;
     }
+
 
     .nav-links a {
         flex: 0 0 auto;
@@ -835,15 +827,79 @@ a.article-card:hover {
         font-size: 15px;
     }
 
-    .nav-admission {
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .knowledge-page-hero {
         padding:
-            8px 16px;
+            65px 20px 50px;
     }
 
 
-    /* --------------------------------
-       VIDEO LEARNING SECTION
-    -------------------------------- */
+    .knowledge-page-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .knowledge-page-hero p {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       BLOG SOURCE
+    ========================= */
+
+    .blog-source {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 24px 20px;
+    }
+
+
+    .blog-source-button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       KNOWLEDGE AREAS
+    ========================= */
+
+    .category {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding:
+            65px 20px 10px;
+    }
+
+
+    .article-grid {
+        width: 100%;
+
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+
+    .article-card {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    /* =========================
+       EV VIDEO LEARNING
+    ========================= */
 
     .video-learning {
         width: 100%;
@@ -853,8 +909,9 @@ a.article-card:hover {
         margin: 0;
 
         padding:
-            65px 20px 30px;
+            70px 20px 35px;
     }
+
 
     .video-header {
         width: 100%;
@@ -863,35 +920,32 @@ a.article-card:hover {
 
         margin:
             0 auto 38px;
-
-        padding: 0;
     }
 
+
     .video-tag {
-        font-size: 14px;
+        font-size: 13px;
 
         letter-spacing: 3px;
     }
 
+
     .video-header h2 {
-        font-size: 34px;
+        font-size: 32px;
 
         line-height: 1.35;
-
-        word-break: normal;
     }
 
+
     .video-header p {
-        font-size: 17px;
+        font-size: 16px;
 
         line-height: 1.8;
     }
 
 
-    /* --------------------------------
-       VERY IMPORTANT:
-       FORCE ONE VIDEO PER ROW
-    -------------------------------- */
+    /* CRITICAL:
+       1 VIDEO = 1 FULL ROW */
 
     .video-grid {
         width: 100%;
@@ -900,10 +954,14 @@ a.article-card:hover {
 
         display: grid;
 
-        grid-template-columns: 1fr !important;
+        grid-template-columns:
+            minmax(0, 1fr) !important;
 
         gap: 22px;
+
+        margin-top: 35px;
     }
+
 
     .video-card {
         width: 100%;
@@ -915,6 +973,7 @@ a.article-card:hover {
         margin: 0;
     }
 
+
     .video-thumb {
         width: 100%;
 
@@ -922,6 +981,7 @@ a.article-card:hover {
 
         aspect-ratio: 16 / 9;
     }
+
 
     .video-thumb img {
         width: 100%;
@@ -931,13 +991,26 @@ a.article-card:hover {
         object-fit: cover;
     }
 
+
+    .video-play {
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 22px;
+    }
+
+
     .video-content {
         width: 100%;
 
         min-width: 0;
 
+        min-height: 0;
+
         padding: 22px;
     }
+
 
     .video-number {
         font-size: 12px;
@@ -946,6 +1019,7 @@ a.article-card:hover {
 
         word-break: normal;
     }
+
 
     .video-content h3 {
         font-size: 23px;
@@ -957,10 +1031,11 @@ a.article-card:hover {
         overflow-wrap: normal;
     }
 
+
     .video-content p {
         font-size: 16px;
 
-        line-height: 1.7;
+        line-height: 1.75;
 
         word-break: normal;
 
@@ -968,9 +1043,14 @@ a.article-card:hover {
     }
 
 
-    /* --------------------------------
-       YOUTUBE CHANNEL BOX
-    -------------------------------- */
+    .video-watch {
+        padding-top: 22px;
+    }
+
+
+    /* =========================
+       YOUTUBE CHANNEL
+    ========================= */
 
     .youtube-channel-box {
         width: 100%;
@@ -988,14 +1068,22 @@ a.article-card:hover {
 
         align-items: stretch;
 
-        gap: 25px;
+        justify-content: flex-start;
+
+        gap: 24px;
+
+        overflow: hidden;
     }
+
 
     .youtube-channel-box > div {
         width: 100%;
 
+        max-width: 100%;
+
         min-width: 0;
     }
+
 
     .youtube-channel-label {
         font-size: 12px;
@@ -1003,24 +1091,20 @@ a.article-card:hover {
         line-height: 1.5;
     }
 
+
     .youtube-channel-box h3 {
-        font-size: 28px;
+        font-size: 25px;
 
         line-height: 1.35;
-
-        word-break: normal;
     }
 
+
     .youtube-channel-box p {
-        font-size: 16px;
+        font-size: 15px;
 
         line-height: 1.7;
     }
 
-
-    /* --------------------------------
-       FIX YOUTUBE BUTTON OVERFLOW
-    -------------------------------- */
 
     .youtube-button {
         display: block;
@@ -1032,15 +1116,31 @@ a.article-card:hover {
         min-width: 0;
 
         padding:
-            15px 16px;
+            14px 15px;
 
         text-align: center;
 
         white-space: normal;
 
-        overflow-wrap: break-word;
-
         word-break: normal;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .knowledge-footer {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 60px;
+
+        padding:
+            45px 20px;
     }
 
 }
