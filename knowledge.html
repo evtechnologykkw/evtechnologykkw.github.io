@@ -760,6 +760,291 @@ a.article-card:hover {
 
 }
 
+/* ==================================================
+   FINAL MOBILE RESPONSIVE FIX
+   Place immediately before </style>
+================================================== */
+
+@media (max-width: 700px) {
+
+    /* --------------------------------
+       PREVENT PAGE HORIZONTAL OVERFLOW
+    -------------------------------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* --------------------------------
+       MOBILE NAVIGATION
+    -------------------------------- */
+
+    .topbar {
+        width: 100%;
+
+        padding:
+            18px 20px 12px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 16px;
+    }
+
+    .brand {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        max-width: 100%;
+
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        gap: 24px;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        padding:
+            0 0 10px;
+
+        white-space: nowrap;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links a {
+        flex: 0 0 auto;
+
+        font-size: 15px;
+    }
+
+    .nav-admission {
+        padding:
+            8px 16px;
+    }
+
+
+    /* --------------------------------
+       VIDEO LEARNING SECTION
+    -------------------------------- */
+
+    .video-learning {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0;
+
+        padding:
+            65px 20px 30px;
+    }
+
+    .video-header {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin:
+            0 auto 38px;
+
+        padding: 0;
+    }
+
+    .video-tag {
+        font-size: 14px;
+
+        letter-spacing: 3px;
+    }
+
+    .video-header h2 {
+        font-size: 34px;
+
+        line-height: 1.35;
+
+        word-break: normal;
+    }
+
+    .video-header p {
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+
+
+    /* --------------------------------
+       VERY IMPORTANT:
+       FORCE ONE VIDEO PER ROW
+    -------------------------------- */
+
+    .video-grid {
+        width: 100%;
+
+        max-width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 22px;
+    }
+
+    .video-card {
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        margin: 0;
+    }
+
+    .video-thumb {
+        width: 100%;
+
+        max-width: 100%;
+
+        aspect-ratio: 16 / 9;
+    }
+
+    .video-thumb img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .video-content {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 22px;
+    }
+
+    .video-number {
+        font-size: 12px;
+
+        line-height: 1.5;
+
+        word-break: normal;
+    }
+
+    .video-content h3 {
+        font-size: 23px;
+
+        line-height: 1.4;
+
+        word-break: normal;
+
+        overflow-wrap: normal;
+    }
+
+    .video-content p {
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        word-break: normal;
+
+        overflow-wrap: normal;
+    }
+
+
+    /* --------------------------------
+       YOUTUBE CHANNEL BOX
+    -------------------------------- */
+
+    .youtube-channel-box {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 35px;
+
+        padding:
+            26px 22px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 25px;
+    }
+
+    .youtube-channel-box > div {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .youtube-channel-label {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+    .youtube-channel-box h3 {
+        font-size: 28px;
+
+        line-height: 1.35;
+
+        word-break: normal;
+    }
+
+    .youtube-channel-box p {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    /* --------------------------------
+       FIX YOUTUBE BUTTON OVERFLOW
+    -------------------------------- */
+
+    .youtube-button {
+        display: block;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        padding:
+            15px 16px;
+
+        text-align: center;
+
+        white-space: normal;
+
+        overflow-wrap: break-word;
+
+        word-break: normal;
+    }
+
+}
+
 </style>
 
 </head>
