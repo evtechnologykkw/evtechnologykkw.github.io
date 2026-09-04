@@ -1772,6 +1772,349 @@
 
     line-height: 1.8;
 }
+/* =========================
+   RESEARCH & INNOVATION
+========================= */
+
+.research-section {
+    background: #071d2c;
+    color: white;
+    padding: 105px 30px;
+}
+
+.research-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+
+.research-header {
+    max-width: 950px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.research-tag {
+    color: #4ce0c8;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.research-title {
+    color: white;
+    font-size: clamp(34px, 3.6vw, 48px);
+    line-height: 1.25;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.research-description {
+    max-width: 900px;
+    margin: 0 auto;
+
+    color: #c8dbe5;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* RESEARCH PROFILE LINKS */
+
+.research-profile-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.research-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 185px;
+
+    padding: 13px 24px;
+
+    border-radius: 28px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    transition: 0.25s;
+}
+
+.scholar-btn {
+    background: white;
+    color: #082238;
+
+    border: 1px solid rgba(255,255,255,0.30);
+}
+
+.researchgate-btn {
+    background: #20b89e;
+    color: white;
+
+    border: 1px solid rgba(76,224,200,0.35);
+}
+
+.research-profile-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.22);
+}
+
+.research-profile-note {
+    margin: 15px 0 0;
+
+    color: #94b4c1;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* FEATURED RESEARCH */
+
+.research-feature {
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+    margin-bottom: 55px;
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(76,224,200,0.08),
+            rgba(53,191,242,0.06)
+        );
+
+    border:
+        1px solid rgba(76,224,200,0.23);
+}
+
+.research-feature-image {
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.research-feature-image img {
+    width: 100%;
+    height: 390px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.research-feature-content {
+    padding: 10px;
+}
+
+.research-feature-label {
+    color: #4ce0c8;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.research-feature h3 {
+    color: white;
+
+    font-size: 31px;
+    line-height: 1.35;
+
+    margin: 0 0 18px;
+}
+
+.research-feature p {
+    color: #cbdde5;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* RESEARCH AREAS */
+
+.research-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.research-card {
+    position: relative;
+
+    min-height: 300px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.055);
+
+    border:
+        1px solid rgba(255,255,255,0.11);
+
+    transition: 0.3s;
+}
+
+.research-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(76,224,200,0.42);
+
+    box-shadow:
+        0 22px 48px rgba(0,0,0,0.25);
+}
+
+.research-number {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16b7a1,
+            #35bff2
+        );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.research-card h3 {
+    color: white;
+
+    font-size: 21px;
+    line-height: 1.4;
+
+    margin: 0 0 14px;
+}
+
+.research-card p {
+    color: #bfd1da;
+
+    font-size: 15px;
+    line-height: 1.75;
+
+    margin: 0;
+}
+
+
+/* RESEARCH TAGS */
+
+.research-tech {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.research-tech span {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(76,224,200,0.08);
+
+    border:
+        1px solid rgba(76,224,200,0.20);
+
+    color: #64e3cf;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* RESEARCH PIPELINE */
+
+.research-pipeline {
+    margin-top: 55px;
+
+    padding: 32px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(76,224,200,0.08),
+            rgba(53,191,242,0.08)
+        );
+
+    border:
+        1px solid rgba(76,224,200,0.28);
+}
+
+.research-pipeline-label {
+    color: #4ce0c8;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 14px;
+}
+
+.research-pipeline p {
+    color: #e0edf2;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+.research-pipeline strong {
+    color: #4ce0c8;
+}
 
         /* =========================
            RESPONSIVE
@@ -1834,6 +2177,13 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             .admission-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .research-feature {
+                grid-template-columns: 1fr;
+            }
+            
+            .research-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -2001,6 +2351,43 @@
             
             .admission-contact {
                 padding: 25px 18px;
+            }
+            .research-section {
+                padding: 75px 20px;
+            }
+            
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .research-feature {
+                padding: 18px;
+            }
+            
+            .research-feature-image img {
+                height: 280px;
+            }
+            
+            .research-feature h3 {
+                font-size: 25px;
+            }
+            
+            .research-description {
+                font-size: 16px;
+            }
+            
+            .research-profile-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .research-profile-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .research-pipeline p {
+                font-size: 16px;
             }
         }
 
@@ -3490,6 +3877,405 @@
 
                 <strong>
                     Innovation
+                </strong>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- =========================
+     RESEARCH & INNOVATION
+========================= -->
+
+<section class="research-section"
+         id="research">
+
+    <div class="research-container">
+
+
+        <!-- HEADER -->
+
+        <div class="research-header">
+
+            <div class="research-tag">
+                RESEARCH &amp; INNOVATION
+            </div>
+
+            <h2 class="research-title">
+                จากการเรียนรู้
+                สู่การวิจัยและสร้างนวัตกรรม
+            </h2>
+
+            <p class="research-description">
+
+                การพัฒนาเทคโนโลยียานยนต์ไฟฟ้า
+                ต้องอาศัยการบูรณาการองค์ความรู้ด้าน
+                Power Electronics,
+                Electric Motor Drive,
+                Embedded Systems,
+                Battery,
+                Energy
+                และระบบควบคุม
+
+                เพื่อพัฒนาองค์ความรู้
+                ต้นแบบ และเทคโนโลยี
+                ที่สามารถทดสอบและใช้งานได้จริง
+
+            </p>
+
+
+            <!-- RESEARCH PROFILES -->
+
+            <div class="research-profile-links">
+
+                <a
+                    href="https://scholar.google.com/citations?user=T74f-PoAAAAJ&hl=th"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="research-profile-btn scholar-btn">
+
+                    Google Scholar ↗
+
+                </a>
+
+
+                <a
+                    href="https://www.researchgate.net/profile/Songklod-Sriprang"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="research-profile-btn researchgate-btn">
+
+                    ResearchGate ↗
+
+                </a>
+
+            </div>
+
+
+            <p class="research-profile-note">
+
+                ดูผลงานวิจัย
+                บทความวิชาการ
+                และเครือข่ายความร่วมมือทางวิจัย
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- FEATURED RESEARCH -->
+
+        <div class="research-feature">
+
+
+            <div class="research-feature-image">
+
+                <img
+                    src="images/project-motor-control.jpg"
+                    alt="Electric Motor Drive Research Test Bench">
+
+            </div>
+
+
+
+            <div class="research-feature-content">
+
+                <div class="research-feature-label">
+
+                    RESEARCH FROM REAL TEST BENCH
+
+                </div>
+
+                <h3>
+
+                    Electric Vehicle Drive
+                    Research Platform
+
+                </h3>
+
+                <p>
+
+                    ใช้ระบบทดสอบจริงในการศึกษา
+                    Motor,
+                    Traction Inverter,
+                    Current and Position Feedback,
+                    Embedded Controller
+                    และ Control Algorithm
+
+                    เพื่อเชื่อมโยง
+                    Modeling,
+                    Simulation
+                    และ Experimental Validation
+                    เข้าด้วยกัน
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- RESEARCH AREAS -->
+
+        <div class="research-grid">
+
+
+            <!-- 01 -->
+
+            <div class="research-card">
+
+                <div class="research-number">
+                    01
+                </div>
+
+                <h3>
+                    Power Electronics
+                    &amp; Traction Inverter
+                </h3>
+
+                <p>
+
+                    ศึกษาและพัฒนา
+                    Power Semiconductor,
+                    Gate Driver,
+                    DC-Link,
+                    Converter
+                    และ Traction Inverter
+                    สำหรับระบบขับเคลื่อนไฟฟ้า
+
+                </p>
+
+                <div class="research-tech">
+
+                    <span>SiC</span>
+                    <span>Inverter</span>
+                    <span>Gate Driver</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="research-card">
+
+                <div class="research-number">
+                    02
+                </div>
+
+                <h3>
+                    Electric Motor Drive
+                    &amp; Advanced Control
+                </h3>
+
+                <p>
+
+                    วิจัยระบบควบคุม
+                    PMSM/IPMSM,
+                    Field-Oriented Control,
+                    Torque Control,
+                    Speed Control
+                    และเทคนิคควบคุมขั้นสูง
+
+                </p>
+
+                <div class="research-tech">
+
+                    <span>PMSM</span>
+                    <span>FOC</span>
+                    <span>Control</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="research-card">
+
+                <div class="research-number">
+                    03
+                </div>
+
+                <h3>
+                    Battery
+                    &amp; Energy Management
+                </h3>
+
+                <p>
+
+                    ศึกษา Battery Pack,
+                    Battery Management System,
+                    State Estimation,
+                    Safety
+                    และ Energy Management
+                    สำหรับระบบไฟฟ้าสมัยใหม่
+
+                </p>
+
+                <div class="research-tech">
+
+                    <span>Battery</span>
+                    <span>BMS</span>
+                    <span>Energy</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="research-card">
+
+                <div class="research-number">
+                    04
+                </div>
+
+                <h3>
+                    EV System Integration
+                    &amp; Validation
+                </h3>
+
+                <p>
+
+                    บูรณาการ Battery,
+                    Inverter,
+                    Motor,
+                    Embedded Controller,
+                    Sensor
+                    และ Communication
+
+                    พร้อมการทดสอบ
+                    และตรวจสอบสมรรถนะของระบบ
+
+                </p>
+
+                <div class="research-tech">
+
+                    <span>Hardware</span>
+                    <span>Software</span>
+                    <span>Validation</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="research-card">
+
+                <div class="research-number">
+                    05
+                </div>
+
+                <h3>
+                    UAV
+                    &amp; Electrified Systems
+                </h3>
+
+                <p>
+
+                    ศึกษา Battery,
+                    Electric Propulsion,
+                    Motor Drive,
+                    Energy Consumption,
+                    Payload
+                    และระบบตรวจวัด
+                    สำหรับระบบอากาศยานไฟฟ้า
+
+                </p>
+
+                <div class="research-tech">
+
+                    <span>UAV</span>
+                    <span>Propulsion</span>
+                    <span>Energy</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="research-card">
+
+                <div class="research-number">
+                    06
+                </div>
+
+                <h3>
+                    Smart Energy,
+                    Hydrogen &amp; Microgrid
+                </h3>
+
+                <p>
+
+                    ศึกษาการบูรณาการ
+                    Renewable Energy,
+                    Energy Storage,
+                    Hydrogen,
+                    Fuel Cell,
+                    EMS
+                    และ Microgrid
+                    สำหรับระบบพลังงานอัจฉริยะ
+
+                </p>
+
+                <div class="research-tech">
+
+                    <span>Hydrogen</span>
+                    <span>EMS</span>
+                    <span>Microgrid</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- RESEARCH PIPELINE -->
+
+        <div class="research-pipeline">
+
+            <div class="research-pipeline-label">
+
+                RESEARCH PIPELINE
+
+            </div>
+
+            <p>
+
+                Problem →
+                Modeling →
+                Simulation →
+                Control Design →
+                Prototype →
+                Experiment →
+                Validation →
+
+                <strong>
+                    Publication &amp; Innovation
                 </strong>
 
             </p>
