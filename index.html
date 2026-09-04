@@ -2197,20 +2197,14 @@
 
 .knowledge-card {
     min-height: 325px;
-
     padding: 30px;
-
     background: white;
-
-    border:
-        1px solid #dfe9ef;
-
+    border: 1px solid #dfe9ef;
     border-radius: 20px;
-
-    box-shadow:
-        0 12px 35px rgba(8,34,56,0.07);
-
+    box-shadow: 0 12px 35px rgba(8,34,56,0.07);
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .knowledge-card:hover {
@@ -2279,12 +2273,10 @@
 
 .knowledge-tech {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 7px;
-
     margin-top: 20px;
+    padding-top: 20px;
 }
 
 .knowledge-tech span {
@@ -4601,6 +4593,7 @@
 
             <h2 class="knowledge-title">
                 เข้าใจระบบย่อย
+                <br>
                 ก่อนบูรณาการเป็นยานยนต์ไฟฟ้า
             </h2>
 
