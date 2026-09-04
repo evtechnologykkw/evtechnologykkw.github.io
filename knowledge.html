@@ -466,7 +466,147 @@ a.article-card:hover {
     font-size: 17px;
     line-height: 1.8;
 }
+/* =========================
+   VIDEO CARDS
+========================= */
 
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 45px;
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border: 1px solid #dde8ee;
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px
+        rgba(8,34,56,0.08);
+
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 42px
+        rgba(8,34,56,0.14);
+}
+
+.video-thumb {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #08283b;
+}
+
+.video-thumb img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.video-play {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(6,24,39,0.88);
+
+    border: 2px solid white;
+
+    color: white;
+
+    font-size: 24px;
+
+    transition: 0.25s;
+}
+
+.video-card:hover .video-play {
+    background: #20b89e;
+}
+
+.video-content {
+    min-height: 245px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.video-number {
+    margin-bottom: 10px;
+
+    color: #0aa590;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.video-content h3 {
+    margin: 0 0 12px;
+
+    color: #082238;
+
+    font-size: 21px;
+
+    line-height: 1.45;
+}
+
+.video-content p {
+    margin: 0;
+
+    color: #607687;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.video-watch {
+    margin-top: auto;
+    padding-top: 22px;
+
+    color: #079887;
+
+    font-size: 14px;
+    font-weight: 800;
+}
 .youtube-channel-box {
     margin-top: 35px;
     padding: 32px;
@@ -1469,7 +1609,76 @@ a.article-card:hover {
 
     </div>
 
+<!-- =========================
+     VIDEO 01
+========================= -->
 
+<div class="video-grid">
+
+
+    <a
+        class="video-card"
+        href="https://youtu.be/Eg7cP5fSsJk?si=wXZtREV5wis_ZfeE"
+        target="_blank"
+        rel="noopener noreferrer">
+
+
+        <div class="video-thumb">
+
+            <img
+                src="https://i.ytimg.com/vi/wXZtREV5wis_ZfeE/hqdefault.jpg"
+                alt="การดัดแปลงมอเตอร์ไซค์ไฟฟ้า"
+                loading="lazy">
+
+
+            <div class="video-play">
+
+                ▶
+
+            </div>
+
+        </div>
+
+
+        <div class="video-content">
+
+            <div class="video-number">
+
+                VIDEO 01 — HANDS-ON
+
+            </div>
+
+
+            <h3>
+
+                การดัดแปลงมอเตอร์ไซค์ไฟฟ้า
+
+            </h3>
+
+
+            <p>
+
+                เรียนรู้การประยุกต์ระบบขับเคลื่อนไฟฟ้า
+                ตั้งแต่ Battery, Motor Controller,
+                Electric Motor และ Wiring
+                ผ่านการปฏิบัติงานจริง
+
+            </p>
+
+
+            <div class="video-watch">
+
+                ดูวิดีโอบน YouTube ↗
+
+            </div>
+
+        </div>
+
+
+    </a>
+
+
+</div>
 
     <div class="youtube-channel-box">
 
