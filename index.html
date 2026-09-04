@@ -2114,6 +2114,276 @@
 .research-pipeline strong {
     color: #4ce0c8;
 }
+/* =========================
+   EV KNOWLEDGE HUB
+========================= */
+
+.knowledge-section {
+    background: #f4f8fb;
+    color: #082238;
+
+    padding: 105px 30px;
+
+    scroll-margin-top: 80px;
+}
+
+.knowledge-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+
+.knowledge-header {
+    max-width: 950px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+}
+
+.knowledge-tag {
+    color: #0fae9a;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.knowledge-title {
+    color: #082238;
+
+    font-size: clamp(34px, 3.6vw, 48px);
+
+    line-height: 1.25;
+
+    margin: 0 0 20px;
+
+    font-weight: 800;
+
+    text-shadow: none;
+}
+
+.knowledge-description {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    color: #587082;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* KNOWLEDGE GRID */
+
+.knowledge-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* KNOWLEDGE CARD */
+
+.knowledge-card {
+    min-height: 325px;
+
+    padding: 30px;
+
+    background: white;
+
+    border:
+        1px solid #dfe9ef;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 35px rgba(8,34,56,0.07);
+
+    transition: 0.3s;
+}
+
+.knowledge-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(15,174,154,0.35);
+
+    box-shadow:
+        0 20px 45px rgba(8,34,56,0.13);
+}
+
+
+/* NUMBER */
+
+.knowledge-number {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17b7a1,
+            #39bff1
+        );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+/* CONTENT */
+
+.knowledge-card h3 {
+    color: #082238;
+
+    font-size: 22px;
+
+    line-height: 1.4;
+
+    margin: 0 0 14px;
+}
+
+.knowledge-card p {
+    color: #617687;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    margin: 0;
+}
+
+
+/* TECHNOLOGY TAGS */
+
+.knowledge-tech {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.knowledge-tech span {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #eef8f7;
+
+    border:
+        1px solid rgba(15,174,154,0.18);
+
+    color: #087f74;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* FEATURED SYSTEM INTEGRATION CARD */
+
+.knowledge-card.knowledge-featured {
+    background:
+        linear-gradient(
+            135deg,
+            #08283b,
+            #075157
+        );
+
+    border-color: transparent;
+}
+
+.knowledge-featured h3 {
+    color: white;
+}
+
+.knowledge-featured p {
+    color: #c8dce5;
+}
+
+.knowledge-featured .knowledge-tech span {
+    background:
+        rgba(255,255,255,0.07);
+
+    color: #64e3cf;
+
+    border-color:
+        rgba(100,227,207,0.20);
+}
+
+
+/* KNOWLEDGE PATH */
+
+.knowledge-path {
+    margin-top: 55px;
+
+    padding: 32px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15,174,154,0.08),
+            rgba(53,191,242,0.08)
+        );
+
+    border:
+        1px solid rgba(15,174,154,0.22);
+}
+
+.knowledge-path-label {
+    color: #0b9f8e;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 14px;
+}
+
+.knowledge-path p {
+    margin: 0;
+
+    color: #40586a;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+.knowledge-path strong {
+    color: #079886;
+}
 
         /* =========================
            RESPONSIVE
@@ -2184,6 +2454,10 @@
             
             .research-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .knowledge-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
         }
 
@@ -2388,6 +2662,29 @@
             .research-pipeline p {
                 font-size: 16px;
             }
+            .knowledge-section {
+                padding: 75px 20px;
+            }
+            
+            .knowledge-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .knowledge-description {
+                font-size: 16px;
+            }
+            
+            .knowledge-card {
+                min-height: auto;
+            }
+            
+            .knowledge-path {
+                padding: 25px 18px;
+            }
+            
+            .knowledge-path p {
+                font-size: 16px;
+            }
         }
 
     </style>
@@ -2444,15 +2741,13 @@
                 Research
             </a>
 
-            <a href="#knowledge">
+            <a href="#ev-knowledge">
                 EV Knowledge
             </a>
 
             <a href="#admission"
                class="nav-admission">
-
                 สมัครเรียน
-
             </a>
 
         </nav>
@@ -4286,6 +4581,334 @@
     </div>
 
 </section>
+<!-- =========================
+     EV KNOWLEDGE HUB
+========================= -->
+
+<section class="knowledge-section"
+         id="ev-knowledge">
+
+    <div class="knowledge-container">
+
+
+        <!-- HEADER -->
+
+        <div class="knowledge-header">
+
+            <div class="knowledge-tag">
+                EV KNOWLEDGE HUB
+            </div>
+
+            <h2 class="knowledge-title">
+                เข้าใจระบบย่อย
+                ก่อนบูรณาการเป็นยานยนต์ไฟฟ้า
+            </h2>
+
+            <p class="knowledge-description">
+
+                คลังความรู้พื้นฐานและเทคโนโลยีสำคัญ
+                สำหรับการเรียนรู้ยานยนต์ไฟฟ้า
+
+                ตั้งแต่ Battery,
+                Power Electronics,
+                Embedded Systems,
+                Electric Motor,
+                Control,
+                Communication
+                ไปจนถึง Charging
+                และการบูรณาการระบบ
+
+            </p>
+
+        </div>
+
+
+
+        <!-- KNOWLEDGE GRID -->
+
+        <div class="knowledge-grid">
+
+
+            <!-- 01 -->
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-number">
+                    01
+                </div>
+
+                <h3>
+                    EV System Fundamentals
+                </h3>
+
+                <p>
+
+                    เรียนรู้โครงสร้างพื้นฐาน
+                    และสถาปัตยกรรมของยานยนต์ไฟฟ้า
+
+                    ตั้งแต่ Battery,
+                    Inverter,
+                    Motor,
+                    DC/DC Converter,
+                    On-Board Charger
+                    และ Vehicle Control Unit
+
+                </p>
+
+                <div class="knowledge-tech">
+
+                    <span>EV Architecture</span>
+                    <span>Powertrain</span>
+                    <span>System</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-number">
+                    02
+                </div>
+
+                <h3>
+                    Battery &amp; BMS
+                </h3>
+
+                <p>
+
+                    เข้าใจ Battery Cell,
+                    Module,
+                    Pack,
+                    State of Charge,
+                    State of Health,
+                    Cell Balancing,
+                    Protection
+                    และ Battery Management System
+
+                </p>
+
+                <div class="knowledge-tech">
+
+                    <span>Battery</span>
+                    <span>BMS</span>
+                    <span>SOC</span>
+                    <span>Safety</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-number">
+                    03
+                </div>
+
+                <h3>
+                    Power Electronics
+                    &amp; Inverter
+                </h3>
+
+                <p>
+
+                    เรียนรู้การแปลงพลังงานไฟฟ้า
+                    Semiconductor,
+                    Gate Driver,
+                    DC-Link,
+                    DC/DC Converter,
+                    PWM
+                    และ 3-Phase Traction Inverter
+
+                </p>
+
+                <div class="knowledge-tech">
+
+                    <span>SiC</span>
+                    <span>PWM</span>
+                    <span>Inverter</span>
+                    <span>Converter</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-number">
+                    04
+                </div>
+
+                <h3>
+                    Electric Motor
+                    &amp; Motor Control
+                </h3>
+
+                <p>
+
+                    ศึกษา Electric Motor,
+                    PMSM/IPMSM,
+                    Position Sensor,
+                    Current Feedback,
+                    Speed Control
+                    และ Field-Oriented Control
+                    สำหรับระบบขับเคลื่อนไฟฟ้า
+
+                </p>
+
+                <div class="knowledge-tech">
+
+                    <span>PMSM</span>
+                    <span>IPMSM</span>
+                    <span>FOC</span>
+                    <span>Control</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-number">
+                    05
+                </div>
+
+                <h3>
+                    Embedded Systems
+                    &amp; CAN Communication
+                </h3>
+
+                <p>
+
+                    เรียนรู้ Microcontroller,
+                    DSP,
+                    Sensor Interface,
+                    Real-Time Control,
+                    CAN Bus,
+                    Vehicle Communication
+                    และระบบ Diagnostics
+
+                </p>
+
+                <div class="knowledge-tech">
+
+                    <span>MCU</span>
+                    <span>DSP</span>
+                    <span>CAN</span>
+                    <span>Diagnostics</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="knowledge-card knowledge-featured">
+
+                <div class="knowledge-number">
+                    06
+                </div>
+
+                <h3>
+                    Charging, Energy
+                    &amp; System Integration
+                </h3>
+
+                <p>
+
+                    ศึกษา AC/DC Charging,
+                    EVSE,
+                    On-Board Charger,
+                    Energy Flow
+                    และนำ Battery,
+                    Power Electronics,
+                    Embedded System,
+                    Motor,
+                    Control
+                    และ Communication
+                    มาบูรณาการเป็นระบบ EV
+
+                </p>
+
+                <div class="knowledge-tech">
+
+                    <span>EVSE</span>
+                    <span>Charging</span>
+                    <span>Energy</span>
+                    <span>Integration</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- KNOWLEDGE PATH -->
+
+        <div class="knowledge-path">
+
+            <div class="knowledge-path-label">
+                KNOWLEDGE PATH
+            </div>
+
+            <p>
+
+                <strong>
+                    Fundamentals
+                </strong>
+
+                →
+
+                Battery &amp; Power Electronics
+
+                →
+
+                Embedded &amp; Communication
+
+                →
+
+                Motor Control
+
+                →
+
+                Charging
+
+                →
+
+                <strong>
+                    System Integration
+                </strong>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
 <!-- =========================
      ADMISSION 2570
 ========================= -->
