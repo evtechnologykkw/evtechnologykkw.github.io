@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GPT-6 Astra มาแล้ว: AI เก่งขึ้น เราต้องเก่งกว่าเดิม | EV Technology RMUTR</title>
+
+  <meta name="description"
+        content="ทำความรู้จัก GPT-6 Astra และสำรวจว่า AI รุ่นใหม่จะช่วยงานวิจัย IEEE Transactions เว็บไซต์ การเขียนบทความ การออกแบบ PCB และงาน Word PowerPoint Excel ได้มากเพียงใด">
+
+  <meta name="keywords"
+        content="GPT-6 Astra, ChatGPT, AI, EV Technology, PCB, IEEE Transactions, Website, RMUTR, เทคโนโลยียานยนต์ไฟฟ้า">
+
+  <meta name="author" content="Electric Vehicle Technology Program, RMUTR">
+
+  <!-- Social Media Preview -->
+  <meta property="og:title"
+        content="GPT-6 Astra มาแล้ว: AI เก่งขึ้น เราต้องเก่งกว่าเดิม">
+
+  <meta property="og:description"
+        content="จากงานวิจัย IEEE Transactions สู่เว็บไซต์ PCB และ Future Skills มาดูกันว่า GPT-6 Astra จะเปลี่ยนวิธีทำงานของเราอย่างไร">
+
+  <meta property="og:image"
+        content="https://evtechnologykkw.github.io/images/gpt6-astra-hero.png">
+
+  <meta property="og:type" content="article">
+
+  <style>
+
+    /* =========================
+       GLOBAL
+    ========================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        "Noto Sans Thai",
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+      line-height: 1.8;
+      color: #172033;
+      background: #f4f7fb;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* =========================
+       TOP BAR
+    ========================== */
+
+    .topbar {
+      background: #071a33;
+      color: white;
+      border-bottom: 3px solid #11b5e4;
+    }
+
+    .topbar-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    .back-link {
+      text-decoration: none;
+      color: #d9f6ff;
+      font-size: .95rem;
+      transition: .2s;
+    }
+
+    .back-link:hover {
+      color: white;
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          135deg,
+          #03142a,
+          #063b62
+        );
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 700px;
+      object-fit: cover;
+    }
+
+
+    /* =========================
+       ARTICLE HEADER
+    ========================== */
+
+    .article-header {
+      max-width: 980px;
+      margin: -50px auto 0;
+      position: relative;
+      z-index: 5;
+
+      background: white;
+      padding: 42px 50px;
+
+      border-radius: 20px;
+      box-shadow:
+        0 15px 45px
+        rgba(8, 32, 62, .15);
+    }
+
+    .category {
+      display: inline-block;
+
+      padding: 7px 14px;
+      margin-bottom: 18px;
+
+      border-radius: 50px;
+
+      background: #e8f8fd;
+      color: #007da5;
+
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(
+        2rem,
+        4vw,
+        3.4rem
+      );
+
+      line-height: 1.25;
+      color: #081d38;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      font-size: 1.17rem;
+      color: #455468;
+    }
+
+    .meta {
+      margin-top: 22px;
+      color: #748195;
+      font-size: .9rem;
+    }
+
+
+    /* =========================
+       ARTICLE BODY
+    ========================== */
+
+    .article-body {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 28px;
+    }
+
+    .article-body p {
+      margin-bottom: 22px;
+      font-size: 1.07rem;
+    }
+
+    .article-body h2 {
+      margin-top: 58px;
+      margin-bottom: 20px;
+
+      color: #082c52;
+      font-size: 1.8rem;
+      line-height: 1.4;
+    }
+
+    .article-body h3 {
+      color: #087aa5;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      font-size: 1.28rem;
+    }
+
+
+    /* =========================
+       QUOTE
+    ========================== */
+
+    .highlight {
+      margin: 35px 0;
+      padding: 28px 30px;
+
+      border-left: 5px solid #09a9d7;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eefaff,
+          #f7fcff
+        );
+
+      border-radius: 10px;
+
+      font-size: 1.22rem;
+      font-weight: 600;
+
+      color: #06385b;
+    }
+
+
+    /* =========================
+       IMAGES
+    ========================== */
+
+    .article-image {
+      margin: 42px 0;
+    }
+
+    .article-image img {
+      width: 100%;
+      border-radius: 16px;
+
+      box-shadow:
+        0 14px 35px
+        rgba(8, 40, 75, .13);
+    }
+
+    .caption {
+      margin-top: 12px;
+      text-align: center;
+      color: #778397;
+      font-size: .88rem;
+    }
+
+
+    /* =========================
+       5 USE CASE CARDS
+    ========================== */
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .use-card {
+      background: white;
+
+      border:
+        1px solid #dce8f2;
+
+      border-radius: 16px;
+
+      padding: 25px;
+
+      box-shadow:
+        0 8px 20px
+        rgba(7, 40, 70, .06);
+    }
+
+    .use-number {
+      color: #08a6d4;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .use-card h3 {
+      margin: 0 0 10px;
+      color: #092c4d;
+    }
+
+    .use-card p {
+      margin: 0;
+      font-size: .98rem;
+    }
+
+
+    /* =========================
+       TECHNOLOGY PLUS EV
+    ========================== */
+
+    .tech-plus {
+      margin: 55px 0;
+
+      padding: 36px;
+
+      border-radius: 18px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #042143,
+          #075d85
+        );
+    }
+
+    .tech-plus h2 {
+      margin-top: 0;
+      color: #70e5ff;
+    }
+
+    .tech-plus strong {
+      color: #92efff;
+    }
+
+
+    /* =========================
+       SOURCE
+    ========================== */
+
+    .sources {
+      margin-top: 55px;
+
+      padding-top: 28px;
+
+      border-top:
+        1px solid #d8e0e8;
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .sources a {
+      color: #007da8;
+      word-break: break-word;
+    }
+
+
+    /* =========================
+       NAVIGATION BUTTON
+    ========================== */
+
+    .article-nav {
+      max-width: 900px;
+      margin: 30px auto 70px;
+      padding: 0 28px;
+      text-align: center;
+    }
+
+    .btn-back {
+      display: inline-block;
+
+      padding: 13px 26px;
+
+      background: #082b4f;
+      color: white;
+
+      border-radius: 50px;
+
+      text-decoration: none;
+      font-weight: 700;
+
+      transition: .2s;
+    }
+
+    .btn-back:hover {
+      background: #0a82aa;
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #06172d;
+      color: #c5d3df;
+
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 768px) {
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .article-header {
+        margin: 0;
+        border-radius: 0;
+        padding: 30px 24px;
+      }
+
+      .article-body {
+        margin-top: 35px;
+        padding: 0 20px;
+      }
+
+      .article-body h2 {
+        margin-top: 42px;
+      }
+
+      .use-case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-plus {
+        padding: 26px 22px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP NAVIGATION
+========================== -->
+
+<header class="topbar">
+
+  <div class="topbar-inner">
+
+    <div class="brand">
+      EV TECHNOLOGY RMUTR
+    </div>
+
+    <a class="back-link"
+       href="knowledge.html">
+       ← กลับสู่ศูนย์รวมความรู้ EV
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO IMAGE
+========================== -->
+
+<section class="hero">
+
+  <img
+    src="images/gpt6-astra-hero.png"
+    alt="GPT-6 Astra AI รุ่นใหม่สำหรับงานระดับมืออาชีพ">
+
+</section>
+
+
+
+<!-- =========================
+     ARTICLE HEADER
+========================== -->
+
+<section class="article-header">
+
+  <span class="category">
+    AI & FUTURE SKILLS
+  </span>
+
+  <h1>
+    GPT-6 Astra มาแล้ว:
+    AI เก่งขึ้น เราต้องเก่งกว่าเดิม
+  </h1>
+
+  <p class="lead">
+    จากงานวิจัยระดับ IEEE Transactions
+    สู่การพัฒนาเว็บไซต์ การเขียนบทความ
+    การออกแบบ PCB และการสร้างเอกสาร
+    มาดูกันว่า AI รุ่นใหม่กำลังเปลี่ยน
+    วิธีการทำงานของเราอย่างไร
+  </p>
+
+  <div class="meta">
+    EV Technology RMUTR
+    &nbsp; | &nbsp;
+    5 กันยายน 2569
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ARTICLE BODY
+========================== -->
+
+<main class="article-body">
+
+
+  <p>
+    ช่วงไม่กี่ปีที่ผ่านมา
+    เราได้ยินกันบ่อยว่า
+    “AI กำลังจะเปลี่ยนโลกการทำงาน”
+    แต่วันนี้คำว่า “กำลังจะ”
+    อาจต้องเปลี่ยนเป็น
+    <strong>“กำลังเกิดขึ้นแล้ว”</strong>
+  </p>
+
+
+  <p>
+    จากประสบการณ์ในการนำ AI
+    มาใช้พัฒนาเว็บไซต์จริง
+    ผมพบว่าเครื่องมืออย่าง ChatGPT
+    สามารถช่วยตั้งแต่การวางโครงสร้างเว็บไซต์
+    เขียน HTML และ CSS
+    ปรับ Responsive Design
+    วิเคราะห์ปัญหาจาก Screenshot
+    ไปจนถึงการแก้ไขรายละเอียด
+    ของเว็บไซต์อย่างต่อเนื่อง
+  </p>
+
+
+  <div class="highlight">
+
+    คำถามที่น่าสนใจจึงไม่ใช่เพียงว่า
+    “AI ทำงานแทนเราได้หรือไม่?”
+    แต่คือ
+    “คนที่สามารถใช้ AI เป็น
+    จะเพิ่มขีดความสามารถของตัวเอง
+    ได้มากเพียงใด?”
+
+  </div>
+
+
+
+  <!-- ======================
+       SECTION 1
+  ======================= -->
+
+  <h2>
+    GPT-6 Astra คืออะไร?
+  </h2>
+
+
+  <p>
+    OpenAI เปิดตัว GPT-6 Astra
+    โดยมุ่งเน้นความสามารถในการทำงาน
+    ที่มีความซับซ้อนมากขึ้น
+    โดยเฉพาะด้าน computer use,
+    browsing, software engineering,
+    science และ professional work
+    รวมถึงการดำเนินงาน
+    ที่ประกอบด้วยหลายขั้นตอน
+  </p>
+
+
+  <p>
+    สิ่งที่น่าสนใจสำหรับผม
+    ไม่ใช่เพียงคะแนน Benchmark
+    แต่คือคำถามว่า
+    เมื่อนำ AI รุ่นนี้มาใช้กับ
+    <strong>งานจริงของนักวิจัย
+    อาจารย์ วิศวกร และนักพัฒนา</strong>
+    จะสามารถช่วยเราได้มากเพียงใด
+  </p>
+
+
+
+  <figure class="article-image">
+
+    <img
+      src="images/gpt6-astra-compare.png"
+      alt="เปรียบเทียบ GPT-6 Astra กับ GPT-5.6 Sol">
+
+    <figcaption class="caption">
+      แนวคิดเปรียบเทียบการใช้งาน GPT-6 Astra
+      กับ AI รุ่นก่อนหน้าในงานจริง
+    </figcaption>
+
+  </figure>
+
+
+
+  <!-- ======================
+       SECTION 2
+  ======================= -->
+
+  <h2>
+    5 งานจริงที่ผมจะทดลองกับ GPT-6 Astra
+  </h2>
+
+
+  <div class="use-case-grid">
+
+
+    <article class="use-card">
+
+      <div class="use-number">
+        01
+      </div>
+
+      <h3>
+        งานวิจัย IEEE Transactions
+      </h3>
+
+      <p>
+        ทดลองใช้ AI ช่วยตรวจสอบ
+        Manuscript วิเคราะห์ผลการทดลอง
+        ตรวจความสอดคล้องของเนื้อหา
+        Figure และ Table
+        รวมถึงการเตรียมคำตอบ Reviewer
+        โดยนักวิจัยยังคงเป็นผู้ตัดสินใจหลัก
+      </p>
+
+    </article>
+
+
+
+    <article class="use-card">
+
+      <div class="use-number">
+        02
+      </div>
+
+      <h3>
+        Website Development
+      </h3>
+
+      <p>
+        ทดลองตั้งแต่ HTML, CSS,
+        Responsive Design,
+        Debugging และ Frontend QA
+        เพื่อดูว่า AI สามารถช่วย
+        จากแนวคิดไปจนถึงเว็บไซต์
+        ที่ใช้งานจริงได้มากเพียงใด
+      </p>
+
+    </article>
+
+
+
+    <article class="use-card">
+
+      <div class="use-number">
+        03
+      </div>
+
+      <h3>
+        บทความและองค์ความรู้
+      </h3>
+
+      <p>
+        เปลี่ยนองค์ความรู้ทางวิศวกรรม
+        ให้กลายเป็นบทความเว็บไซต์
+        เอกสารประกอบการสอน
+        Facebook Content และ Infographic
+        ที่คนทั่วไปเข้าใจได้ง่ายขึ้น
+      </p>
+
+    </article>
+
+
+
+    <article class="use-card">
+
+      <div class="use-number">
+        04
+      </div>
+
+      <h3>
+        PCB / Altium
+      </h3>
+
+      <p>
+        ทดลองวิเคราะห์ PCB Layout,
+        DRC, Clearance,
+        Component Placement,
+        Overlay และปัญหาจาก Screenshot
+        เพื่อประเมินว่า AI
+        ช่วยงานวิศวกรรมได้ลึกเพียงใด
+      </p>
+
+    </article>
+
+
+
+    <article class="use-card">
+
+      <div class="use-number">
+        05
+      </div>
+
+      <h3>
+        Word / PowerPoint / Excel
+      </h3>
+
+      <p>
+        ทดลองสร้างเอกสาร
+        Presentation ตารางวิเคราะห์
+        Proposal รายงาน และสื่อการสอน
+        จากข้อมูลดิบไปสู่ผลงาน
+        ที่พร้อมใช้งานจริง
+      </p>
+
+    </article>
+
+
+  </div>
+
+
+
+  <!-- ======================
+       SECTION 3
+  ======================= -->
+
+  <h2>
+    แล้ว AI จะทำให้คนตกงานหรือไม่?
+  </h2>
+
+
+  <p>
+    ผมคิดว่าคำถามที่สำคัญกว่า
+    อาจไม่ใช่ว่า
+    “AI จะทำให้คนตกงานหรือไม่”
+    แต่คือ
+    <strong>
+      คนที่ใช้ AI เป็น
+      กับคนที่ไม่ใช้ AI
+      จะมีความสามารถในการทำงาน
+      แตกต่างกันมากเพียงใด
+    </strong>
+  </p>
+
+
+  <p>
+    AI อาจไม่ได้ทำให้อาชีพทั้งหมดหายไป
+    แต่กำลังลดเวลาในการทำงานหลายประเภท
+    ทำให้คนหนึ่งคนสามารถทำงาน
+    ได้กว้างขึ้นกว่าเดิม
+  </p>
+
+
+  <p>
+    นักวิจัยสามารถสร้างเว็บไซต์ได้
+    วิศวกรสามารถสร้าง Content ได้
+    อาจารย์สามารถสร้าง Infographic ได้
+    และผู้ที่มีความรู้เฉพาะทาง
+    สามารถใช้ AI ขยายขีดความสามารถ
+    ของตัวเองได้มากขึ้น
+  </p>
+
+
+
+  <!-- ======================
+       EV FUTURE SKILLS IMAGE
+  ======================= -->
+
+  <figure class="article-image">
+
+    <img
+      src="images/gpt6-astra-ev-skills.png"
+      alt="AI Future Skills และเทคโนโลยียานยนต์ไฟฟ้า">
+
+    <figcaption class="caption">
+      AI เก่งขึ้น เราต้องเก่งกว่าเดิม:
+      Technology Plus + EV
+    </figcaption>
+
+  </figure>
+
+
+
+  <!-- ======================
+       TECHNOLOGY PLUS EV
+  ======================= -->
+
+  <section class="tech-plus">
+
+    <h2>
+      Technology Plus + EV
+    </h2>
+
+    <p>
+      อนาคตของการศึกษา
+      ไม่ควรสอนให้นักศึกษาแข่งขันกับ AI
+      ด้วยการจำข้อมูลให้มากกว่า AI
+      แต่ควรสร้างพื้นฐานวิชาชีพที่แข็งแรง
+      พร้อมกับความสามารถในการใช้เทคโนโลยี
+      เพื่อแก้ปัญหาจริง
+    </p>
+
+    <p>
+      เทคโนโลยียานยนต์ไฟฟ้าในปัจจุบัน
+      ไม่ได้ประกอบด้วยเรื่องรถยนต์เพียงอย่างเดียว
+      แต่เป็นการบูรณาการ
+    </p>
+
+    <p>
+      <strong>
+        Battery + Power Electronics +
+        Embedded System + Motor +
+        Control + Communication +
+        Software + AI + Data
+      </strong>
+    </p>
+
+    <p>
+      นี่คือแนวคิดของ
+      <strong>Technology Plus + EV</strong>
+      เพื่อพัฒนาทักษะที่โลกปัจจุบันต้องการ
+      และสร้างพื้นฐานสำหรับเทคโนโลยีในอนาคต
+    </p>
+
+  </section>
+
+
+
+  <!-- ======================
+       NEXT
+  ======================= -->
+
+  <h2>
+    ต่อจากนี้ผมจะทดลองให้ดูจริง
+  </h2>
+
+
+  <p>
+    บทความนี้เป็นเพียงจุดเริ่มต้น
+    ผมจะค่อย ๆ ทดลอง GPT-6 Astra
+    กับงานจริง และนำผลมาแบ่งปัน
+    ทั้งส่วนที่ทำได้ดี
+    ส่วนที่ยังมีข้อจำกัด
+    ข้อผิดพลาดที่พบ
+    และสิ่งที่มนุษย์ยังต้องเป็น
+    ผู้ตรวจสอบและตัดสินใจด้วยตัวเอง
+  </p>
+
+
+  <div class="highlight">
+
+    วิธีที่ดีที่สุดในการเข้าใจ AI
+    อาจไม่ใช่การถามว่า
+    “AI เก่งแค่ไหน?”
+    แต่คือ
+    “เมื่อนำมาทำงานจริง
+    มันช่วยเราได้ถึงไหน?”
+
+  </div>
+
+
+
+  <!-- ======================
+       SOURCES
+  ======================= -->
+
+  <section class="sources">
+
+    <h2>
+      แหล่งข้อมูลเพิ่มเติม
+    </h2>
+
+    <p>
+      OpenAI —
+      GPT-6 Astra:
+      A New Generation of Intelligence
+    </p>
+
+    <p>
+      <a
+        href="https://openai.com/index/gpt-6-astra/"
+        target="_blank"
+        rel="noopener">
+        https://openai.com/index/gpt-6-astra/
+      </a>
+    </p>
+
+  </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     BACK BUTTON
+========================== -->
+
+<div class="article-nav">
+
+  <a
+    class="btn-back"
+    href="knowledge.html">
+
+    ← กลับสู่ EV Knowledge
+
+  </a>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+  <p>
+    <strong>
+      Electric Vehicle Technology Program
+    </strong>
+  </p>
+
+  <p>
+    Faculty of Industry and Technology
+    <br>
+    Rajamangala University of Technology Rattanakosin
+  </p>
+
+  <p style="margin-top:12px;">
+    Technology Plus + EV
+  </p>
+
+</footer>
+
+
+</body>
+</html>
