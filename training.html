@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        EV Technology Training Hub | RMUTR
+    </title>
+
+    <meta name="description"
+          content="ศูนย์รวมหลักสูตรอบรมด้านเทคโนโลยียานยนต์ไฟฟ้า ระบบขับเคลื่อน อินเวอร์เตอร์ Power Electronics Motor Control Embedded Systems และ Future Skills">
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            font-family:
+                Arial,
+                "Tahoma",
+                sans-serif;
+
+            background: #f4f8fb;
+            color: #082238;
+
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .navbar {
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(5, 20, 35, 0.97);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        .nav-container {
+
+            max-width: 1450px;
+
+            min-height: 76px;
+
+            margin: auto;
+
+            padding:
+                0 30px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .logo {
+
+            color: white;
+
+            font-size: 19px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            white-space: nowrap;
+        }
+
+
+        .logo-ev {
+            color: #40e0c0;
+            margin-right: 5px;
+        }
+
+
+        .nav-menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+
+            overflow-x: auto;
+        }
+
+
+        .nav-menu a {
+
+            color: #d7e7f2;
+
+            font-size: 14px;
+
+            white-space: nowrap;
+
+            transition: 0.25s;
+        }
+
+
+        .nav-menu a:hover,
+        .nav-menu .active {
+
+            color: #40e0c0;
+        }
+
+
+        .nav-admission {
+
+            border:
+                1px solid #40e0c0;
+
+            border-radius: 25px;
+
+            padding:
+                9px 18px;
+        }
+
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .training-hero {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                115px 30px
+                105px;
+
+            color: white;
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 25%,
+                    rgba(50, 205, 190, .22),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #041526,
+                    #07354b,
+                    #075257
+                );
+        }
+
+
+        .training-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            border-radius: 50%;
+
+            right: -180px;
+            bottom: -270px;
+
+            border:
+                1px solid
+                rgba(77,214,255,.30);
+        }
+
+
+        .hero-container {
+
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 1280px;
+
+            margin: auto;
+        }
+
+
+        .hero-tag {
+
+            color: #4ce0c8;
+
+            font-size: 15px;
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .training-hero h1 {
+
+            max-width: 900px;
+
+            margin:
+                0 0 25px;
+
+            font-size:
+                clamp(
+                    42px,
+                    5vw,
+                    72px
+                );
+
+            line-height: 1.15;
+        }
+
+
+        .hero-subtitle {
+
+            color: #58dfff;
+
+            font-size:
+                clamp(
+                    22px,
+                    2.6vw,
+                    34px
+                );
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero-description {
+
+            max-width: 850px;
+
+            color: #d5e6ee;
+
+            font-size: 18px;
+
+            line-height: 1.9;
+        }
+
+
+        .hero-tech {
+
+            margin-top: 32px;
+
+            color: #8cf0dc;
+
+            font-size: 17px;
+            font-weight: 700;
+
+            line-height: 1.8;
+        }
+
+
+        .hero-buttons {
+
+            margin-top: 38px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+        }
+
+
+        .hero-button {
+
+            display: inline-block;
+
+            padding:
+                13px 25px;
+
+            border-radius: 30px;
+
+            border:
+                1px solid
+                rgba(100,230,215,.7);
+
+            color: white;
+
+            font-weight: 700;
+
+            transition: .25s;
+        }
+
+
+        .hero-button.primary {
+
+            background: #20bca9;
+
+            border-color: #20bca9;
+
+            color: #042132;
+        }
+
+
+        .hero-button:hover {
+
+            transform:
+                translateY(-2px);
+        }
+
+
+
+        /* =========================================
+           QUICK INFO
+        ========================================= */
+
+        .quick-section {
+
+            margin-top: -42px;
+
+            position: relative;
+
+            z-index: 5;
+
+            padding:
+                0 30px;
+        }
+
+
+        .quick-grid {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            background: white;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 18px 45px
+                rgba(8,34,56,.13);
+
+            overflow: hidden;
+        }
+
+
+        .quick-item {
+
+            padding:
+                28px 24px;
+
+            text-align: center;
+
+            border-right:
+                1px solid #e5edf2;
+        }
+
+
+        .quick-item:last-child {
+            border-right: none;
+        }
+
+
+        .quick-label {
+
+            color: #0fae9a;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .quick-value {
+
+            color: #082238;
+
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+
+
+        /* =========================================
+           COURSE CATALOG
+        ========================================= */
+
+        .courses {
+
+            padding:
+                110px 30px
+                90px;
+        }
+
+
+        .section-container {
+
+            max-width: 1280px;
+
+            margin: auto;
+        }
+
+
+        .section-header {
+
+            max-width: 900px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-tag {
+
+            color: #0fae9a;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+
+        .section-title {
+
+            margin:
+                12px 0 15px;
+
+            color: #082238;
+
+            font-size:
+                clamp(
+                    34px,
+                    4vw,
+                    50px
+                );
+
+            line-height: 1.2;
+        }
+
+
+        .section-description {
+
+            color: #597083;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+
+        /* =========================================
+           FLAGSHIP COURSE
+        ========================================= */
+
+        .flagship-course {
+
+            display: grid;
+
+            grid-template-columns:
+                1.05fr .95fr;
+
+            background: white;
+
+            border:
+                1px solid #dfe9ef;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 16px 45px
+                rgba(8,34,56,.08);
+
+            margin-bottom: 35px;
+        }
+
+
+        .flagship-image {
+
+            min-height: 470px;
+
+            background:
+
+                linear-gradient(
+                    rgba(3,20,35,.18),
+                    rgba(3,20,35,.42)
+                ),
+
+                url("images/project-inverter.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .flagship-content {
+
+            padding:
+                48px 46px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .status-row {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .course-status {
+
+            display: inline-block;
+
+            padding:
+                7px 13px;
+
+            border-radius: 20px;
+
+            background: #ddfaf4;
+
+            color: #087e70;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        .professional-badge {
+
+            display: inline-block;
+
+            padding:
+                7px 13px;
+
+            border-radius: 20px;
+
+            background: #e9f7ff;
+
+            color: #087da5;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        .flagship-content h2 {
+
+            margin:
+                0 0 12px;
+
+            color: #082238;
+
+            font-size:
+                clamp(
+                    28px,
+                    3vw,
+                    40px
+                );
+
+            line-height: 1.3;
+        }
+
+
+        .course-en {
+
+            color: #078aa8;
+
+            font-size: 18px;
+            font-weight: 700;
+
+            line-height: 1.5;
+
+            margin-bottom: 22px;
+        }
+
+
+        .course-description {
+
+            color: #5d7181;
+
+            font-size: 16px;
+
+            line-height: 1.85;
+
+            margin-bottom: 25px;
+        }
+
+
+        .course-tech {
+
+            color: #073c5a;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            line-height: 1.8;
+
+            margin-bottom: 28px;
+        }
+
+
+        .course-meta {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 12px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .meta-item {
+
+            padding:
+                13px 15px;
+
+            border-radius: 12px;
+
+            background: #f3f8fb;
+
+            color: #36536a;
+
+            font-size: 14px;
+        }
+
+
+        .meta-item strong {
+
+            display: block;
+
+            color: #082238;
+
+            font-size: 15px;
+        }
+
+
+        .course-action {
+
+            display: inline-block;
+
+            align-self: flex-start;
+
+            padding:
+                13px 24px;
+
+            border-radius: 30px;
+
+            background: #092d46;
+
+            color: white;
+
+            font-weight: 700;
+        }
+
+
+        .course-action.disabled {
+
+            background: #71828e;
+
+            cursor: default;
+        }
+
+
+
+        /* =========================================
+           PLANNED COURSES
+        ========================================= */
+
+        .planned-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 25px;
+        }
+
+
+        .planned-card {
+
+            position: relative;
+
+            padding:
+                35px;
+
+            min-height: 285px;
+
+            background: white;
+
+            border:
+                1px solid #dfe9ef;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(8,34,56,.05);
+        }
+
+
+        .planned-label {
+
+            color: #0fae9a;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .planned-card h3 {
+
+            margin:
+                0 0 15px;
+
+            color: #082238;
+
+            font-size: 24px;
+        }
+
+
+        .planned-card p {
+
+            color: #647887;
+
+            margin: 0;
+
+            line-height: 1.8;
+        }
+
+
+        .coming-soon {
+
+            position: absolute;
+
+            right: 25px;
+            bottom: 25px;
+
+            color: #0a9b89;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+
+
+        /* =========================================
+           LEARNING MODEL
+        ========================================= */
+
+        .learning-model {
+
+            padding:
+                95px 30px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #061c2e,
+                    #074451
+                );
+        }
+
+
+        .model-header {
+
+            max-width: 900px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .model-header .section-title {
+            color: white;
+        }
+
+
+        .model-header .section-description {
+            color: #c8dbe5;
+        }
+
+
+        .model-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5,1fr);
+
+            gap: 18px;
+        }
+
+
+        .model-item {
+
+            padding:
+                28px 20px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            background:
+                rgba(255,255,255,.055);
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+        }
+
+
+        .model-number {
+
+            width: 48px;
+            height: 48px;
+
+            margin:
+                0 auto 17px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #13ad9b,
+                    #35bff2
+                );
+
+            font-weight: 800;
+        }
+
+
+        .model-item h3 {
+
+            margin:
+                0 0 8px;
+
+            color: white;
+
+            font-size: 18px;
+        }
+
+
+        .model-item p {
+
+            color: #bdd0da;
+
+            font-size: 14px;
+
+            margin: 0;
+        }
+
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .training-cta {
+
+            padding:
+                90px 30px;
+
+            text-align: center;
+        }
+
+
+        .cta-box {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding:
+                55px 35px;
+
+            border-radius: 24px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #073650,
+                    #087f78
+                );
+        }
+
+
+        .cta-label {
+
+            color: #82f0db;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+
+        .cta-box h2 {
+
+            margin:
+                12px 0 18px;
+
+            font-size:
+                clamp(
+                    30px,
+                    4vw,
+                    46px
+                );
+        }
+
+
+        .cta-box p {
+
+            max-width: 720px;
+
+            margin:
+                0 auto 28px;
+
+            color: #dcf0f1;
+
+            font-size: 17px;
+        }
+
+
+        .cta-status {
+
+            display: inline-block;
+
+            padding:
+                12px 25px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,.13);
+
+            color: white;
+
+            font-weight: 700;
+        }
+
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            padding:
+                48px 25px;
+
+            text-align: center;
+
+            color: #cbd9e1;
+
+            background: #05192a;
+        }
+
+
+        footer strong {
+
+            color: #4ce0c8;
+        }
+
+
+        footer p {
+
+            margin:
+                7px 0;
+        }
+
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 980px) {
+
+            .nav-container {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding:
+                    17px 22px;
+            }
+
+
+            .nav-menu {
+
+                width: 100%;
+
+                padding-bottom: 4px;
+            }
+
+
+            .quick-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+
+            .quick-item:nth-child(2) {
+                border-right: none;
+            }
+
+
+            .quick-item:nth-child(-n+2) {
+
+                border-bottom:
+                    1px solid #e5edf2;
+            }
+
+
+            .flagship-course {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .flagship-image {
+
+                min-height: 400px;
+            }
+
+
+            .model-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+        }
+
+
+
+        @media (max-width: 650px) {
+
+            .training-hero {
+
+                padding:
+                    75px 20px
+                    85px;
+            }
+
+
+            .hero-description {
+
+                font-size: 16px;
+            }
+
+
+            .quick-section {
+
+                padding:
+                    0 18px;
+            }
+
+
+            .quick-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .quick-item {
+
+                border-right: none !important;
+
+                border-bottom:
+                    1px solid #e5edf2;
+            }
+
+
+            .quick-item:last-child {
+                border-bottom: none;
+            }
+
+
+            .courses,
+            .learning-model,
+            .training-cta {
+
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+
+            .flagship-image {
+
+                min-height: 250px;
+            }
+
+
+            .flagship-content {
+
+                padding:
+                    32px 24px;
+            }
+
+
+            .course-meta {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .planned-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .model-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html#home"
+           class="logo">
+
+            <span class="logo-ev">
+                EV
+            </span>
+
+            TECHNOLOGY
+
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html#home">
+                Home
+            </a>
+
+            <a href="index.html#program">
+                Program
+            </a>
+
+            <a href="index.html#curriculum">
+                Curriculum
+            </a>
+
+            <a href="index.html#laboratory">
+                Laboratory
+            </a>
+
+            <a href="index.html#projects">
+                Projects
+            </a>
+
+            <a href="index.html#research">
+                Research
+            </a>
+
+            <a href="training.html"
+               class="active">
+                Training
+            </a>
+
+            <a href="knowledge.html">
+                EV Knowledge
+            </a>
+
+            <a href="index.html#admission"
+               class="nav-admission">
+                สมัครเรียน
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+========================================== -->
+
+<section class="training-hero">
+
+    <div class="hero-container">
+
+        <div class="hero-tag">
+
+            EV TECHNOLOGY TRAINING HUB
+
+        </div>
+
+
+        <h1>
+
+            Professional Skills
+            for the Electric Mobility Era
+
+        </h1>
+
+
+        <div class="hero-subtitle">
+
+            Technology Plus + EV
+
+        </div>
+
+
+        <p class="hero-description">
+
+            ศูนย์รวมหลักสูตรอบรมเชิงปฏิบัติการ
+            สำหรับการ Upskill และ Reskill
+            ด้านเทคโนโลยียานยนต์ไฟฟ้า
+            ตั้งแต่ Power Electronics,
+            Embedded Systems,
+            Inverter, Motor Control
+            ไปจนถึงการบูรณาการระบบจริง
+
+        </p>
+
+
+        <div class="hero-tech">
+
+            LEARN →
+            BUILD →
+            MEASURE →
+            CONTROL →
+            VALIDATE
+
+        </div>
+
+
+        <div class="hero-buttons">
+
+            <a class="hero-button primary"
+               href="#courses">
+
+                ดูหลักสูตรอบรม
+
+            </a>
+
+            <a class="hero-button"
+               href="knowledge.html">
+
+                EV Knowledge
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUICK INFORMATION
+========================================== -->
+
+<section class="quick-section">
+
+    <div class="quick-grid">
+
+        <div class="quick-item">
+
+            <div class="quick-label">
+                TRAINING MODEL
+            </div>
+
+            <div class="quick-value">
+                Hands-on
+            </div>
+
+        </div>
+
+
+        <div class="quick-item">
+
+            <div class="quick-label">
+                FOCUS
+            </div>
+
+            <div class="quick-value">
+                Hardware + Control
+            </div>
+
+        </div>
+
+
+        <div class="quick-item">
+
+            <div class="quick-label">
+                LEARNING
+            </div>
+
+            <div class="quick-value">
+                Real System
+            </div>
+
+        </div>
+
+
+        <div class="quick-item">
+
+            <div class="quick-label">
+                OUTCOME
+            </div>
+
+            <div class="quick-value">
+                Professional Skills
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSES
+========================================== -->
+
+<section class="courses"
+         id="courses">
+
+    <div class="section-container">
+
+
+        <header class="section-header">
+
+            <div class="section-tag">
+
+                PROFESSIONAL TRAINING
+
+            </div>
+
+
+            <h2 class="section-title">
+
+                หลักสูตรอบรม
+
+            </h2>
+
+
+            <p class="section-description">
+
+                เรียนรู้จากระบบจริง
+                เชื่อมโยงพื้นฐานวิศวกรรม
+                สู่การออกแบบ การควบคุม
+                การวัด และการทดสอบ
+                ระบบยานยนต์ไฟฟ้า
+
+            </p>
+
+        </header>
+
+
+
+        <!-- =====================================
+             FLAGSHIP COURSE
+        ====================================== -->
+
+        <article class="flagship-course">
+
+            <div class="flagship-image">
+            </div>
+
+
+            <div class="flagship-content">
+
+                <div class="status-row">
+
+                    <span class="course-status">
+
+                        PREPARING FOR REGISTRATION
+
+                    </span>
+
+                    <span class="professional-badge">
+
+                        FLAGSHIP COURSE
+
+                    </span>
+
+                </div>
+
+
+                <h2>
+
+                    การออกแบบและควบคุม
+                    ระบบขับเคลื่อนยานยนต์ไฟฟ้า
+
+                </h2>
+
+
+                <div class="course-en">
+
+                    Design and Real-Time Control
+                    of Electric Vehicle
+                    Traction Drive Systems
+
+                </div>
+
+
+                <p class="course-description">
+
+                    หลักสูตรเชิงปฏิบัติการ
+                    ที่เชื่อมโยงตั้งแต่สถาปัตยกรรม
+                    ระบบขับเคลื่อน,
+                    DC Link,
+                    Gate Driver,
+                    3-Phase Inverter,
+                    PMSM,
+                    Position Sensor
+                    ไปจนถึง PWM,
+                    Field-Oriented Control
+                    และการ Commissioning
+                    ระบบจริง
+
+                </p>
+
+
+                <div class="course-tech">
+
+                    PMSM •
+                    3-PHASE INVERTER •
+                    PWM •
+                    FOC •
+                    C2000 •
+                    dSPACE MicroLabBox •
+                    HIL
+
+                </div>
+
+
+                <div class="course-meta">
+
+                    <div class="meta-item">
+
+                        <strong>
+                            3 วัน
+                        </strong>
+
+                        ระยะเวลาการอบรม
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <strong>
+                            18 ชั่วโมง
+                        </strong>
+
+                        Professional Course
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <strong>
+                            Hands-on
+                        </strong>
+
+                        ปฏิบัติกับระบบจริง
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <strong>
+                            จำกัดประมาณ 15 คน
+                        </strong>
+
+                        เพื่อการฝึกปฏิบัติอย่างทั่วถึง
+
+                    </div>
+
+                </div>
+
+
+                <span class="course-action disabled">
+
+                    รายละเอียดหลักสูตร
+                    — กำลังจัดทำ
+
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================
+             FUTURE / PLANNED COURSES
+             หมายเหตุ:
+             เป็นแนวทางต่อยอดในอนาคต
+             ยังไม่ใช่ประกาศเปิดอบรม
+        ====================================== -->
+
+        <div class="planned-grid">
+
+
+            <article class="planned-card">
+
+                <div class="planned-label">
+
+                    PLANNED COURSE
+
+                </div>
+
+                <h3>
+
+                    EV Battery &amp;
+                    Battery Management System
+
+                </h3>
+
+                <p>
+
+                    แนวทางต่อยอดหลักสูตร
+                    ด้านแบตเตอรี่ยานยนต์ไฟฟ้า
+                    การวัด การจัดการพลังงาน
+                    และ Battery Management System
+
+                </p>
+
+                <div class="coming-soon">
+
+                    COMING SOON
+
+                </div>
+
+            </article>
+
+
+
+            <article class="planned-card">
+
+                <div class="planned-label">
+
+                    PLANNED COURSE
+
+                </div>
+
+                <h3>
+
+                    PCB &amp;
+                    Power Electronics for EV
+
+                </h3>
+
+                <p>
+
+                    แนวทางต่อยอดหลักสูตร
+                    จากการออกแบบวงจร
+                    Gate Driver และ PCB
+                    สู่ Power Electronics
+                    สำหรับระบบยานยนต์ไฟฟ้า
+
+                </p>
+
+                <div class="coming-soon">
+
+                    COMING SOON
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEARNING MODEL
+========================================== -->
+
+<section class="learning-model">
+
+    <div class="section-container">
+
+
+        <header class="model-header">
+
+            <div class="section-tag">
+
+                HANDS-ON LEARNING MODEL
+
+            </div>
+
+
+            <h2 class="section-title">
+
+                จากความรู้
+                สู่ระบบที่ทำงานจริง
+
+            </h2>
+
+
+            <p class="section-description">
+
+                รูปแบบการอบรมเน้นให้ผู้เข้าอบรม
+                เชื่อมโยงทฤษฎีกับ Hardware,
+                Measurement,
+                Embedded Control
+                และการ Commissioning
+                อย่างเป็นขั้นตอน
+
+            </p>
+
+        </header>
+
+
+
+        <div class="model-grid">
+
+
+            <div class="model-item">
+
+                <div class="model-number">
+                    01
+                </div>
+
+                <h3>
+                    Learn
+                </h3>
+
+                <p>
+                    เข้าใจหลักการ
+                    และสถาปัตยกรรม
+                </p>
+
+            </div>
+
+
+            <div class="model-item">
+
+                <div class="model-number">
+                    02
+                </div>
+
+                <h3>
+                    Build
+                </h3>
+
+                <p>
+                    เชื่อมต่อ Hardware
+                    และระบบจริง
+                </p>
+
+            </div>
+
+
+            <div class="model-item">
+
+                <div class="model-number">
+                    03
+                </div>
+
+                <h3>
+                    Measure
+                </h3>
+
+                <p>
+                    ตรวจวัดสัญญาณ
+                    และวิเคราะห์ผล
+                </p>
+
+            </div>
+
+
+            <div class="model-item">
+
+                <div class="model-number">
+                    04
+                </div>
+
+                <h3>
+                    Control
+                </h3>
+
+                <p>
+                    พัฒนา Embedded
+                    และ Motor Control
+                </p>
+
+            </div>
+
+
+            <div class="model-item">
+
+                <div class="model-number">
+                    05
+                </div>
+
+                <h3>
+                    Validate
+                </h3>
+
+                <p>
+                    ทดสอบ Debug
+                    และยืนยันผลจริง
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================== -->
+
+<section class="training-cta">
+
+    <div class="cta-box">
+
+        <div class="cta-label">
+
+            TRAINING REGISTRATION
+
+        </div>
+
+
+        <h2>
+
+            เตรียมพบกับ
+            Professional EV Training
+
+        </h2>
+
+
+        <p>
+
+            ระบบลงทะเบียน
+            รายละเอียดวันอบรม
+            ค่าใช้จ่าย
+            และสิทธิประโยชน์ของผู้เข้าอบรม
+            จะประกาศหลังจากตรวจสอบ
+            Course Structure,
+            Training Kit
+            และกระบวนการของมหาวิทยาลัย
+            เรียบร้อยแล้ว
+
+        </p>
+
+
+        <span class="cta-status">
+
+            กำลังเตรียมเปิดรับสมัคร
+
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            EV TECHNOLOGY TRAINING HUB
+        </strong>
+
+    </p>
+
+
+    <p>
+
+        Electric Vehicle Technology Program
+
+    </p>
+
+
+    <p>
+
+        Faculty of Industry and Technology
+        <br>
+        Rajamangala University
+        of Technology Rattanakosin
+
+    </p>
+
+
+    <p style="margin-top:15px;">
+
+        Technology Plus + EV
+
+    </p>
+
+</footer>
+
+
+</body>
+</html>
