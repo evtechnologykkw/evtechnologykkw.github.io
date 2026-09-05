@@ -1710,6 +1710,244 @@
             }
 
         }
+
+        /* =========================================
+           LEVEL 1 OPENING COURSE
+        ========================================= */
+
+        .opening-course {
+            margin-bottom: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f0fcf9
+                );
+
+            border:
+                2px solid #20bca9;
+        }
+
+
+        .opening-course .flagship-image {
+            background:
+                linear-gradient(
+                    rgba(3,20,35,.15),
+                    rgba(3,20,35,.38)
+                ),
+                url("https://img.youtube.com/vi/RtztrB2MBJo/hqdefault.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .level-badge {
+            display: inline-block;
+
+            padding:
+                7px 13px;
+
+            border-radius: 20px;
+
+            background: #092d46;
+            color: white;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        .take-home-badge {
+            display: inline-block;
+
+            padding:
+                7px 13px;
+
+            border-radius: 20px;
+
+            background: #ddfaf4;
+            color: #087e70;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        .course-highlight {
+            margin:
+                5px 0 26px;
+
+            padding:
+                18px 20px;
+
+            border-left:
+                4px solid #20bca9;
+
+            border-radius: 10px;
+
+            background: #edf9f6;
+
+            color: #174b50;
+
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+
+        /* =========================================
+           COURSE PREVIEW VIDEOS
+        ========================================= */
+
+        .course-preview {
+            margin-top: 35px;
+        }
+
+
+        .preview-label {
+            color: #0fae9a;
+
+            font-size: 12px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .preview-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .preview-card {
+            display: block;
+
+            overflow: hidden;
+
+            border-radius: 14px;
+
+            background: #f3f8fb;
+
+            border:
+                1px solid #dce8ee;
+
+            transition: .25s;
+        }
+
+
+        .preview-card:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(8,34,56,.10);
+        }
+
+
+        .preview-card img {
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        .preview-content {
+            padding:
+                14px 15px;
+        }
+
+
+        .preview-ep {
+            color: #0aa58f;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .preview-title {
+            margin-top: 5px;
+
+            color: #082238;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            line-height: 1.5;
+        }
+
+
+        .preview-watch {
+            margin-top: 8px;
+
+            color: #078da4;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           PROFESSIONAL NEXT-LEVEL COURSE
+        ========================================= */
+
+        .next-professional-course {
+            margin-top: 35px;
+
+            border:
+                1px solid #dfe9ef;
+        }
+
+
+        .next-course-label {
+            display: inline-block;
+
+            padding:
+                7px 13px;
+
+            border-radius: 20px;
+
+            background: #eef4ff;
+            color: #406797;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================
+           LEVEL 1 RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 650px) {
+
+            .preview-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
         
     </style>
 
@@ -2335,7 +2573,321 @@
 
         </header>
 
+        <!-- =====================================
+             LEVEL 01 — OPENING COURSE
+        ====================================== -->
 
+        <article class="flagship-course opening-course">
+
+
+            <div class="flagship-image">
+            </div>
+
+
+            <div class="flagship-content">
+
+
+                <div class="status-row">
+
+
+                    <span class="level-badge">
+
+                        LEVEL 01 — START HERE
+
+                    </span>
+
+
+                    <span class="take-home-badge">
+
+                        TAKE-HOME TRAINING KIT
+
+                    </span>
+
+
+                </div>
+
+
+
+                <h2>
+
+                    การเชื่อมต่อ Hardware
+                    และการสร้าง PWM
+                    ด้วย TI C2000
+
+                </h2>
+
+
+
+                <div class="course-en">
+
+                    Hardware Interfacing
+                    and PWM Generation
+                    with TI C2000
+
+                </div>
+
+
+
+                <p class="course-description">
+
+                    หลักสูตรเริ่มต้นของ
+                    EV Drive &amp; Control Learning Hub
+                    สำหรับผู้ที่ต้องการเข้าใจ
+                    Embedded Control
+                    ตั้งแต่การเชื่อมต่อ
+                    TI C2000 ผ่าน
+                    Shield / Buffer Interface,
+                    การป้องกันวงจร,
+                    การตรวจสอบสัญญาณ
+                    ไปจนถึงการสร้าง PWM
+                    ด้วย MATLAB / Simulink
+                    และตรวจวัดผลบน Hardware จริง
+
+                </p>
+
+
+
+                <div class="course-highlight">
+
+                    <strong>
+                        เป้าหมายของเฟสแรก:
+                    </strong>
+
+                    ผู้เข้าอบรมต้องสามารถ
+                    ต่อชุดทดลองอย่างถูกต้อง,
+                    เข้าใจเส้นทางของสัญญาณ,
+                    สร้างและ Download
+                    โปรแกรมไปยัง C2000,
+                    สร้าง PWM
+                    และตรวจวัด Waveform
+                    ด้วยเครื่องมือจริงได้ด้วยตนเอง
+
+                </div>
+
+
+
+                <div class="course-tech">
+
+                    TI C2000 •
+                    Shield / Buffer •
+                    Hardware Protection •
+                    MATLAB / Simulink •
+                    PWM •
+                    Oscilloscope
+
+                </div>
+
+
+
+                <div class="course-meta">
+
+
+                    <div class="meta-item">
+
+                        <strong>
+                            1 วัน
+                        </strong>
+
+                        Foundation Training
+
+                    </div>
+
+
+
+                    <div class="meta-item">
+
+                        <strong>
+                            6 ชั่วโมง
+                        </strong>
+
+                        Hands-on Workshop
+
+                    </div>
+
+
+
+                    <div class="meta-item">
+
+                        <strong>
+                            Take-Home Kit
+                        </strong>
+
+                        มีชุดทดลองสำหรับฝึกต่อ
+
+                    </div>
+
+
+
+                    <div class="meta-item">
+
+                        <strong>
+                            ประมาณ 10–15 คน
+                        </strong>
+
+                        เพื่อการดูแลการปฏิบัติอย่างทั่วถึง
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     IMPORTANT KIT NOTE
+                ================================== -->
+
+                <div class="course-highlight">
+
+                    <strong>
+                        Training Kit:
+                    </strong>
+
+                    ผู้เข้าอบรมจะได้รับ
+                    ชุดทดลองสำหรับ C2000
+                    และ Buffer / Interface
+                    เพื่อนำกลับไปฝึกฝนต่อหลังการอบรม
+
+                    <br><br>
+
+                    dSPACE MicroLabBox
+                    ใช้เป็นระบบ Advanced Demonstration
+                    ภายในห้องปฏิบัติการ
+                    และไม่รวมอยู่ในชุดทดลองนำกลับบ้าน
+
+                </div>
+
+
+
+                <!-- =================================
+                     COURSE PREVIEW
+                ================================== -->
+
+                <div class="course-preview">
+
+
+                    <div class="preview-label">
+
+                        COURSE PREVIEW
+
+                    </div>
+
+
+
+                    <div class="preview-grid">
+
+
+                        <!-- EP 1 -->
+
+                        <a
+                            class="preview-card"
+                            href="https://youtu.be/RtztrB2MBJo"
+                            target="_blank"
+                            rel="noopener">
+
+
+                            <img
+                                src="https://img.youtube.com/vi/RtztrB2MBJo/hqdefault.jpg"
+                                alt="C2000 PWM EP1 เตรียมชุดทดลอง"
+                                loading="lazy">
+
+
+                            <div class="preview-content">
+
+
+                                <div class="preview-ep">
+
+                                    PREVIEW — EP.1
+
+                                </div>
+
+
+                                <div class="preview-title">
+
+                                    เตรียมชุดทดลอง
+                                    ก่อนการเขียนโปรแกรม
+                                    สร้างสัญญาณ PWM
+
+                                </div>
+
+
+                                <div class="preview-watch">
+
+                                    ดูตัวอย่างบน YouTube →
+
+                                </div>
+
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- EP 2 -->
+
+                        <a
+                            class="preview-card"
+                            href="https://youtu.be/8PsRJRglZwk"
+                            target="_blank"
+                            rel="noopener">
+
+
+                            <img
+                                src="https://img.youtube.com/vi/8PsRJRglZwk/hqdefault.jpg"
+                                alt="C2000 PWM EP2 MATLAB Simulink"
+                                loading="lazy">
+
+
+                            <div class="preview-content">
+
+
+                                <div class="preview-ep">
+
+                                    PREVIEW — EP.2
+
+                                </div>
+
+
+                                <div class="preview-title">
+
+                                    โปรแกรมสร้างสัญญาณ PWM
+                                    โดย MATLAB / Simulink
+
+                                </div>
+
+
+                                <div class="preview-watch">
+
+                                    ดูตัวอย่างบน YouTube →
+
+                                </div>
+
+
+                            </div>
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <span class="course-action disabled">
+
+                    รายละเอียดหลักสูตร
+                    — กำลังจัดทำ
+
+                </span>
+
+
+            </div>
+
+
+        </article>
 
         <!-- =====================================
              FLAGSHIP COURSE
@@ -2353,13 +2905,13 @@
 
                     <span class="course-status">
 
-                        PREPARING FOR REGISTRATION
+                        PROFESSIONAL COURSE
 
                     </span>
 
                     <span class="professional-badge">
 
-                        FLAGSHIP COURSE
+                        ADVANCED LEARNING PATH
 
                     </span>
 
@@ -2464,8 +3016,8 @@
 
                 <span class="course-action disabled">
 
-                    รายละเอียดหลักสูตร
-                    — กำลังจัดทำ
+                    Professional Course
+                    — Coming Soon
 
                 </span>
 
