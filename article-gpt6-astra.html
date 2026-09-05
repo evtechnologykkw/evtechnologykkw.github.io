@@ -121,7 +121,7 @@
 
     .hero img {
       width: 100%;
-      max-height: 700px;
+      max-height: 600px;
       object-fit: cover;
     }
 
@@ -282,19 +282,18 @@
 
     .use-card {
       background: white;
-
-      border:
-        1px solid #dce8f2;
-
+      border: 1px solid #dce8f2;
       border-radius: 16px;
-
       padding: 25px;
-
-      box-shadow:
-        0 8px 20px
+      box-shadow: 0 8px 20px
         rgba(7, 40, 70, .06);
     }
-
+    /* จัด Card ใบสุดท้ายให้อยู่ตรงกลางบน Desktop */
+    .use-card:last-child {
+      grid-column: 1 / -1;
+      width: calc(50% - 10px);
+      justify-self: center;
+    }
     .use-number {
       color: #08a6d4;
       font-size: 1.8rem;
@@ -447,7 +446,13 @@
       .use-case-grid {
         grid-template-columns: 1fr;
       }
-
+      
+      /* Mobile: ให้ Card 05 กลับมาเต็มความกว้าง */
+      .use-card:last-child {
+        grid-column: auto;
+        width: 100%;
+      }
+      
       .tech-plus {
         padding: 26px 22px;
       }
