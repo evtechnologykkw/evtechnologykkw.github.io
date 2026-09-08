@@ -1168,6 +1168,240 @@
             font-weight: 800;
         }
 
+/* =========================================
+   REGISTRATION INFORMATION
+========================================= */
+
+.registration-info {
+
+    background: #f3f8fa;
+}
+
+.registration-dashboard {
+
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 16px;
+}
+
+.reg-status-card {
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: white;
+
+    border:
+        1px solid #dce7ed;
+}
+
+.reg-status-label {
+
+    color: #0a9b88;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1.6px;
+
+    margin-bottom: 8px;
+}
+
+.reg-status-value {
+
+    color: #082238;
+
+    font-size: 19px;
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+.reg-status-note {
+
+    margin-top: 7px;
+
+    color: #687c8a;
+
+    font-size: 13px;
+}
+
+
+.registration-package {
+
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 24px;
+}
+
+.reg-package-card {
+
+    padding: 32px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    border:
+        1px solid #dce7ed;
+}
+
+.reg-package-card h3 {
+
+    margin:
+        0 0 15px;
+
+    color: #082238;
+
+    font-size: 24px;
+}
+
+.reg-package-list {
+
+    margin: 0;
+
+    padding-left: 20px;
+
+    color: #607584;
+}
+
+.reg-package-list li {
+
+    margin-bottom: 9px;
+}
+
+
+.registration-process {
+
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap: 14px;
+}
+
+.reg-process-step {
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: white;
+
+    border:
+        1px solid #dce7ed;
+}
+
+.reg-process-number {
+
+    width: 42px;
+    height: 42px;
+
+    margin:
+        0 auto 12px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #20bca9;
+
+    color: white;
+
+    font-weight: 900;
+}
+
+.reg-process-step h3 {
+
+    margin:
+        0 0 7px;
+
+    font-size: 16px;
+}
+
+.reg-process-step p {
+
+    margin: 0;
+
+    color: #677b89;
+
+    font-size: 13px;
+}
+
+
+.registration-note {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border-left:
+        4px solid #20bca9;
+
+    border-radius: 14px;
+
+    background: #eaf8f5;
+
+    color: #375665;
+}
+
+.registration-note strong {
+
+    color: #087d70;
+}
+
+
+/* =========================================
+   REGISTRATION RESPONSIVE
+========================================= */
+
+@media (max-width: 980px) {
+
+    .registration-dashboard {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .registration-process {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .registration-dashboard,
+    .registration-package,
+    .registration-process {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
 
         /* =========================================
            REGISTRATION CTA
@@ -3046,7 +3280,399 @@
 
 </section>
 
+<!-- =========================================
+     REGISTRATION INFORMATION
+========================================== -->
 
+<section class="section registration-info">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            COURSE REGISTRATION
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            ข้อมูลสำหรับการสมัครอบรม
+
+        </h2>
+
+
+        <p class="section-description">
+
+            หลักสูตร LEVEL 01
+            อยู่ระหว่างการเตรียมเปิดรับสมัครอย่างเป็นทางการ
+
+            ข้อมูลวันอบรม ค่าใช้จ่าย
+            สถานที่ และช่องทางการสมัคร
+            จะประกาศหลังจากตรวจสอบ
+            Course Package, Training Kit
+            และกระบวนการที่เกี่ยวข้องเรียบร้อยแล้ว
+
+        </p>
+
+
+
+        <!-- REGISTRATION DASHBOARD -->
+
+        <div class="registration-dashboard">
+
+
+            <div class="reg-status-card">
+
+                <div class="reg-status-label">
+
+                    COURSE STATUS
+
+                </div>
+
+                <div class="reg-status-value">
+
+                    Preparing for Registration
+
+                </div>
+
+                <div class="reg-status-note">
+
+                    กำลังเตรียมเปิดรับสมัคร
+
+                </div>
+
+            </div>
+
+
+
+            <div class="reg-status-card">
+
+                <div class="reg-status-label">
+
+                    CLASS SIZE
+
+                </div>
+
+                <div class="reg-status-value">
+
+                    10–15 คน
+
+                </div>
+
+                <div class="reg-status-note">
+
+                    เพื่อการฝึกปฏิบัติอย่างทั่วถึง
+
+                </div>
+
+            </div>
+
+
+
+            <div class="reg-status-card">
+
+                <div class="reg-status-label">
+
+                    TRAINING HOURS
+
+                </div>
+
+                <div class="reg-status-value">
+
+                    6 ชั่วโมง
+
+                </div>
+
+                <div class="reg-status-note">
+
+                    One-Day Hands-on Workshop
+
+                </div>
+
+            </div>
+
+
+
+            <div class="reg-status-card">
+
+                <div class="reg-status-label">
+
+                    TRAINING KIT
+
+                </div>
+
+                <div class="reg-status-value">
+
+                    Take-Home Kit
+
+                </div>
+
+                <div class="reg-status-note">
+
+                    ใช้ฝึกต่อหลังการอบรม
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- TRAINING PACKAGE -->
+
+        <div class="registration-package">
+
+
+            <div class="reg-package-card">
+
+
+                <h3>
+
+                    สิ่งที่รวมอยู่ในหลักสูตร
+
+                </h3>
+
+
+                <ul class="reg-package-list">
+
+                    <li>
+                        การอบรมเชิงปฏิบัติการ
+                        LEVEL 01 จำนวน 6 ชั่วโมง
+                    </li>
+
+                    <li>
+                        การฝึกกับ TI C2000
+                        และ Hardware Interface จริง
+                    </li>
+
+                    <li>
+                        MATLAB / Simulink
+                        Example Models
+                    </li>
+
+                    <li>
+                        Laboratory Files
+                        และเอกสารประกอบการเรียน
+                    </li>
+
+                    <li>
+                        Final PWM Commissioning Challenge
+                    </li>
+
+                    <li>
+                        Take-Home Training Kit
+                        ตามรายละเอียดหลักสูตร
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+
+            <div class="reg-package-card">
+
+
+                <h3>
+
+                    ข้อมูลที่จะประกาศเพิ่มเติม
+
+                </h3>
+
+
+                <ul class="reg-package-list">
+
+                    <li>
+                        วันและเวลาจัดอบรม
+                    </li>
+
+                    <li>
+                        สถานที่จัดอบรม
+                    </li>
+
+                    <li>
+                        ค่าลงทะเบียน
+                    </li>
+
+                    <li>
+                        รายละเอียดสิทธิประโยชน์
+                    </li>
+
+                    <li>
+                        เงื่อนไขการยืนยันสิทธิ์
+                    </li>
+
+                    <li>
+                        ช่องทางการชำระเงิน
+                        และเอกสารที่เกี่ยวข้อง
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- REGISTRATION PROCESS -->
+
+        <div style="margin-top:65px;">
+
+
+            <div class="section-tag">
+
+                REGISTRATION PROCESS
+
+            </div>
+
+
+            <h2 class="section-title">
+
+                ขั้นตอนการสมัครอบรม
+
+            </h2>
+
+
+
+            <div class="registration-process">
+
+
+                <div class="reg-process-step">
+
+                    <div class="reg-process-number">
+                        01
+                    </div>
+
+                    <h3>
+                        ตรวจรายละเอียด
+                    </h3>
+
+                    <p>
+                        อ่าน Course Detail
+                        และตรวจคุณสมบัติผู้เข้าอบรม
+                    </p>
+
+                </div>
+
+
+
+                <div class="reg-process-step">
+
+                    <div class="reg-process-number">
+                        02
+                    </div>
+
+                    <h3>
+                        ลงทะเบียน
+                    </h3>
+
+                    <p>
+                        กรอกข้อมูลในระบบสมัคร
+                        เมื่อเปิดรับสมัคร
+                    </p>
+
+                </div>
+
+
+
+                <div class="reg-process-step">
+
+                    <div class="reg-process-number">
+                        03
+                    </div>
+
+                    <h3>
+                        ยืนยันสิทธิ์
+                    </h3>
+
+                    <p>
+                        ดำเนินการตามขั้นตอน
+                        ที่ประกาศในระบบ
+                    </p>
+
+                </div>
+
+
+
+                <div class="reg-process-step">
+
+                    <div class="reg-process-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Pre-Course Setup
+                    </h3>
+
+                    <p>
+                        เตรียม MATLAB,
+                        Simulink และ C2000
+                        Support Package
+                    </p>
+
+                </div>
+
+
+
+                <div class="reg-process-step">
+
+                    <div class="reg-process-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Attend &amp; Build
+                    </h3>
+
+                    <p>
+                        เข้าอบรม
+                        ฝึก Hardware จริง
+                        และทำ Final Challenge
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- IMPORTANT NOTE -->
+
+        <div class="registration-note">
+
+            <strong>
+
+                หมายเหตุสำคัญ:
+
+            </strong>
+
+            ขณะนี้ยังไม่มีการประกาศ
+            ค่าใช้จ่าย วันอบรม
+            หรือช่องทางชำระเงินอย่างเป็นทางการ
+
+            โปรดตรวจสอบข้อมูลจากหน้า
+            EV Technology Training Hub
+            และช่องทางที่มหาวิทยาลัยกำหนด
+            ก่อนดำเนินการสมัครหรือชำระเงินทุกครั้ง
+
+        </div>
+
+
+    </div>
+
+</section>
 
 <!-- =========================================
      REGISTRATION
@@ -3088,10 +3714,15 @@
 
         <span class="registration-status">
 
-            กำลังเตรียมเปิดรับสมัคร
+            Registration Opening Soon
 
         </span>
-
+        
+        <p style="margin-top:16px; margin-bottom:0;">
+        
+            ระบบสมัครออนไลน์กำลังอยู่ระหว่างการจัดเตรียม
+        
+        </p>
 
     </div>
 
