@@ -1,0 +1,3122 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        C2000 Hardware Interface & PWM Training | EV Technology RMUTR
+    </title>
+
+    <meta name="description"
+          content="หลักสูตรเชิงปฏิบัติการ TI C2000 Hardware Interface และ PWM Generation ด้วย MATLAB Simulink พร้อม Take-Home Training Kit">
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            font-family:
+                Arial,
+                Tahoma,
+                sans-serif;
+
+            color: #082238;
+
+            background: #f4f8fb;
+
+            line-height: 1.75;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .navbar {
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(5,20,35,.98);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .nav-container {
+
+            max-width: 1450px;
+
+            min-height: 76px;
+
+            margin: auto;
+
+            padding:
+                0 30px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .logo {
+
+            color: white;
+
+            font-size: 19px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            white-space: nowrap;
+        }
+
+        .logo-ev {
+            color: #40e0c0;
+        }
+
+        .nav-menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+
+            overflow-x: auto;
+        }
+
+        .nav-menu a {
+
+            color: #d7e7f2;
+
+            font-size: 14px;
+
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu .active {
+
+            color: #40e0c0;
+        }
+
+        .nav-admission {
+
+            border:
+                1px solid #40e0c0;
+
+            border-radius: 24px;
+
+            padding:
+                9px 18px;
+        }
+
+
+        /* =========================================
+           HERO COURSE
+        ========================================= */
+
+        .course-hero {
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(35,210,190,.20),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #041627,
+                    #073a4c,
+                    #075b5a
+                );
+
+            padding:
+                75px 30px
+                85px;
+        }
+
+        .hero-container {
+
+            max-width: 1280px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                .95fr 1.05fr;
+
+            gap: 55px;
+
+            align-items: center;
+        }
+
+        .hero-image {
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,.25);
+        }
+
+        .hero-image img {
+
+            width: 100%;
+
+            aspect-ratio: 4 / 3;
+
+            object-fit: cover;
+        }
+
+        .hero-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-tag {
+
+            display: inline-block;
+
+            padding:
+                7px 13px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(70,230,205,.15);
+
+            border:
+                1px solid
+                rgba(80,235,210,.3);
+
+            color: #7df0dc;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 1.4px;
+        }
+
+        .hero-tag.start {
+
+            background: #20bca9;
+
+            color: #042232;
+        }
+
+        .course-hero h1 {
+
+            margin:
+                0 0 16px;
+
+            font-size:
+                clamp(
+                    38px,
+                    4.5vw,
+                    62px
+                );
+
+            line-height: 1.2;
+        }
+
+        .hero-en {
+
+            color: #61ddff;
+
+            font-size:
+                clamp(
+                    18px,
+                    2vw,
+                    25px
+                );
+
+            font-weight: 700;
+
+            line-height: 1.5;
+
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+
+            color: #d9e8ee;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+        .hero-tech {
+
+            margin-top: 25px;
+
+            color: #7ee9d6;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           QUICK INFO
+        ========================================= */
+
+        .quick-info {
+
+            margin-top: -38px;
+
+            position: relative;
+
+            z-index: 5;
+
+            padding:
+                0 30px;
+        }
+
+        .quick-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 18px 45px
+                rgba(8,34,56,.13);
+
+            overflow: hidden;
+        }
+
+        .quick-item {
+
+            padding:
+                27px 20px;
+
+            text-align: center;
+
+            border-right:
+                1px solid #e3ebf0;
+        }
+
+        .quick-item:last-child {
+            border-right: none;
+        }
+
+        .quick-label {
+
+            color: #0aa58f;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 1.7px;
+        }
+
+        .quick-value {
+
+            margin-top: 7px;
+
+            color: #082238;
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           GENERAL SECTION
+        ========================================= */
+
+        .section {
+
+            padding:
+                90px 30px;
+        }
+
+        .section.alt {
+            background: white;
+        }
+
+        .container {
+
+            max-width: 1180px;
+
+            margin: auto;
+        }
+
+        .section-tag {
+
+            color: #0aa58f;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            letter-spacing: 3px;
+        }
+
+        .section-title {
+
+            margin:
+                10px 0 18px;
+
+            color: #082238;
+
+            font-size:
+                clamp(
+                    32px,
+                    4vw,
+                    47px
+                );
+
+            line-height: 1.25;
+        }
+
+        .section-description {
+
+            max-width: 900px;
+
+            color: #5f7383;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           AUDIENCE
+        ========================================= */
+
+        .audience-grid {
+
+            margin-top: 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 18px;
+        }
+
+        .audience-card {
+
+            padding: 27px;
+
+            border-radius: 17px;
+
+            background: white;
+
+            border:
+                1px solid #dce7ed;
+        }
+
+        .audience-card h3 {
+
+            margin:
+                0 0 10px;
+
+            font-size: 18px;
+        }
+
+        .audience-card p {
+
+            margin: 0;
+
+            color: #667a89;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           WHY COURSE
+        ========================================= */
+
+        .why-box {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+
+            margin-top: 35px;
+        }
+
+        .why-card {
+
+            padding:
+                35px;
+
+            border-radius: 20px;
+
+            background: #f2f8fa;
+
+            border:
+                1px solid #dbe7ec;
+        }
+
+        .why-card strong {
+
+            display: block;
+
+            color: #0a9c89;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 10px;
+        }
+
+        .why-card h3 {
+
+            margin:
+                0 0 12px;
+
+            font-size: 24px;
+        }
+
+        .why-card p {
+
+            color: #617585;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           LEARNING OUTCOMES
+        ========================================= */
+
+        .outcome-grid {
+
+            margin-top: 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 17px;
+        }
+
+        .outcome-item {
+
+            display: flex;
+
+            gap: 17px;
+
+            padding: 23px;
+
+            background: white;
+
+            border:
+                1px solid #dbe7ed;
+
+            border-radius: 16px;
+        }
+
+        .outcome-number {
+
+            width: 42px;
+            height: 42px;
+
+            flex: 0 0 42px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #20bca9;
+
+            color: white;
+
+            font-weight: 800;
+        }
+
+        .outcome-item h3 {
+
+            margin:
+                0 0 4px;
+
+            font-size: 17px;
+        }
+
+        .outcome-item p {
+
+            margin: 0;
+
+            color: #647887;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           SYSTEM ARCHITECTURE
+        ========================================= */
+
+        .architecture {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #041a2b,
+                    #064350
+                );
+        }
+
+        .architecture .section-title {
+            color: white;
+        }
+
+        .architecture .section-description {
+            color: #c9dce4;
+        }
+
+        .architecture-flow {
+
+            margin-top: 45px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5,1fr);
+
+            gap: 14px;
+        }
+
+        .arch-node {
+
+            position: relative;
+
+            padding:
+                28px 17px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+        }
+
+        .arch-number {
+
+            color: #61e4d0;
+
+            font-size: 12px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .arch-node h3 {
+
+            color: white;
+
+            margin:
+                8px 0;
+
+            font-size: 18px;
+        }
+
+        .arch-node p {
+
+            color: #c3d6de;
+
+            margin: 0;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           MODULE VIDEOS
+        ========================================= */
+
+        .module-grid {
+
+            margin-top: 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 25px;
+        }
+
+        .module-card {
+
+            overflow: hidden;
+
+            background: white;
+
+            border-radius: 20px;
+
+            border:
+                1px solid #dbe7ed;
+
+            box-shadow:
+                0 10px 30px
+                rgba(8,34,56,.05);
+        }
+
+        .module-card img {
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            object-fit: cover;
+        }
+
+        .module-content {
+
+            padding: 27px;
+        }
+
+        .module-label {
+
+            color: #0aa58f;
+
+            font-size: 12px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .module-card h3 {
+
+            margin:
+                8px 0 12px;
+
+            font-size: 23px;
+        }
+
+        .module-card p {
+
+            color: #617585;
+
+            font-size: 14px;
+        }
+
+        .watch-video {
+
+            display: inline-block;
+
+            margin-top: 8px;
+
+            color: #078da4;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           TRAINING KIT
+        ========================================= */
+
+        .kit-section {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #052034,
+                    #08736d
+                );
+        }
+
+        .kit-section .section-title {
+            color: white;
+        }
+
+        .kit-section .section-description {
+            color: #d2e5e8;
+        }
+
+        .kit-layout {
+
+            margin-top: 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 30px;
+        }
+
+        .kit-image {
+
+            overflow: hidden;
+
+            border-radius: 20px;
+        }
+
+        .kit-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 390px;
+
+            object-fit: cover;
+        }
+
+        .kit-content {
+
+            padding:
+                32px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,.13);
+        }
+
+        .kit-content h3 {
+
+            margin:
+                0 0 20px;
+
+            color: #75ecd8;
+
+            font-size: 27px;
+        }
+
+        .kit-list {
+
+            margin: 0;
+
+            padding-left: 20px;
+
+            color: #e4f0f2;
+        }
+
+        .kit-list li {
+
+            margin-bottom: 11px;
+        }
+
+        .kit-note {
+
+            margin-top: 25px;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(0,0,0,.18);
+
+            color: #d9ebed;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           SCHEDULE
+        ========================================= */
+
+        .schedule {
+
+            margin-top: 40px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            border:
+                1px solid #dce7ed;
+        }
+
+        .schedule-row {
+
+            display: grid;
+
+            grid-template-columns:
+                170px 1fr;
+
+            border-bottom:
+                1px solid #e2eaef;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-time {
+
+            padding: 21px;
+
+            background: #edf7f5;
+
+            color: #087f70;
+
+            font-weight: 800;
+        }
+
+        .schedule-content {
+
+            padding: 21px;
+        }
+
+        .schedule-content strong {
+
+            display: block;
+
+            color: #082238;
+        }
+
+        .schedule-content span {
+
+            color: #677b8a;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           FINAL CHALLENGE
+        ========================================= */
+
+        .challenge-box {
+
+            margin-top: 35px;
+
+            padding:
+                40px;
+
+            border-radius: 22px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06283e,
+                    #087b73
+                );
+        }
+
+        .challenge-box h3 {
+
+            margin:
+                0 0 12px;
+
+            font-size: 29px;
+        }
+
+        .challenge-spec {
+
+            margin:
+                25px 0;
+
+            padding: 20px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,.10);
+
+            font-family:
+                monospace;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           PRE COURSE
+        ========================================= */
+
+        .checklist {
+
+            margin-top: 35px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 17px;
+        }
+
+        .check-item {
+
+            padding: 22px;
+
+            border-radius: 16px;
+
+            background: white;
+
+            border:
+                1px solid #dce7ed;
+        }
+
+        .check-item strong {
+
+            display: block;
+
+            color: #0a9786;
+
+            margin-bottom: 5px;
+        }
+
+        .check-item span {
+
+            color: #647887;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           AI ENGINEERING
+        ========================================= */
+
+        .ai-box {
+
+            padding:
+                40px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #061c30,
+                    #07555a
+                );
+
+            color: white;
+        }
+
+        .ai-box h3 {
+
+            margin:
+                0 0 15px;
+
+            color: #71ebd6;
+
+            font-size: 28px;
+        }
+
+        .ai-flow {
+
+            margin-top: 25px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            align-items: center;
+        }
+
+        .ai-step {
+
+            padding:
+                8px 13px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(80,225,205,.11);
+
+            border:
+                1px solid
+                rgba(90,230,210,.25);
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .ai-arrow {
+            color: #68e4d0;
+        }
+
+
+        /* =========================================
+           NEXT LEVEL
+        ========================================= */
+
+        .next-level {
+
+            padding:
+                50px;
+
+            border-radius: 23px;
+
+            background: white;
+
+            border:
+                1px solid #dce7ed;
+
+            box-shadow:
+                0 12px 35px
+                rgba(8,34,56,.06);
+        }
+
+        .next-level h3 {
+
+            font-size:
+                clamp(
+                    27px,
+                    3vw,
+                    38px
+                );
+
+            margin:
+                8px 0 15px;
+        }
+
+        .next-level p {
+
+            color: #627787;
+
+            max-width: 800px;
+        }
+
+        .next-tech {
+
+            margin-top: 20px;
+
+            color: #078c80;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           REGISTRATION CTA
+        ========================================= */
+
+        .registration {
+
+            padding:
+                95px 30px;
+
+            text-align: center;
+        }
+
+        .registration-box {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding:
+                55px 35px;
+
+            border-radius: 24px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #07364d,
+                    #088279
+                );
+        }
+
+        .registration-box h2 {
+
+            margin:
+                8px 0 15px;
+
+            font-size:
+                clamp(
+                    30px,
+                    4vw,
+                    45px
+                );
+        }
+
+        .registration-box p {
+
+            max-width: 700px;
+
+            margin:
+                0 auto 25px;
+
+            color: #dbecef;
+        }
+
+        .registration-status {
+
+            display: inline-block;
+
+            padding:
+                12px 25px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,.14);
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            padding:
+                50px 25px;
+
+            text-align: center;
+
+            color: #c9d8df;
+
+            background: #05192a;
+        }
+
+        footer strong {
+            color: #56e1ca;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 980px) {
+
+            .nav-container {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding:
+                    16px 22px;
+            }
+
+            .nav-menu {
+                width: 100%;
+            }
+
+            .hero-container {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .quick-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .audience-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .architecture-flow {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .kit-layout {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .course-hero,
+            .section,
+            .registration {
+
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .quick-info {
+
+                padding:
+                    0 18px;
+            }
+
+            .quick-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .quick-item {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid #e3ebf0;
+            }
+
+            .audience-grid,
+            .why-box,
+            .outcome-grid,
+            .module-grid,
+            .checklist {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .architecture-flow {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .schedule-row {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .next-level {
+
+                padding:
+                    30px 24px;
+            }
+
+            .challenge-box,
+            .ai-box {
+
+                padding:
+                    30px 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+
+            <span class="logo-ev">
+                EV
+            </span>
+
+            TECHNOLOGY
+
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#program">
+                Program
+            </a>
+
+            <a href="index.html#curriculum">
+                Curriculum
+            </a>
+
+            <a href="index.html#laboratory">
+                Laboratory
+            </a>
+
+            <a href="index.html#projects">
+                Projects
+            </a>
+
+            <a href="index.html#research">
+                Research
+            </a>
+
+            <a href="training.html"
+               class="active">
+                Training
+            </a>
+
+            <a href="knowledge.html">
+                EV Knowledge
+            </a>
+
+            <a href="index.html#admission"
+               class="nav-admission">
+                สมัครเรียน
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     COURSE HERO
+========================================== -->
+
+<section class="course-hero">
+
+    <div class="hero-container">
+
+
+        <div class="hero-image">
+
+            <img
+                src="images/course-c2000-pwm.JPG"
+                alt="C2000 Hardware PWM Training System">
+
+        </div>
+
+
+        <div>
+
+
+            <div class="hero-tags">
+
+                <span class="hero-tag start">
+
+                    LEVEL 01 — START HERE
+
+                </span>
+
+
+                <span class="hero-tag">
+
+                    FOUNDATION
+
+                </span>
+
+
+                <span class="hero-tag">
+
+                    TAKE-HOME TRAINING KIT
+
+                </span>
+
+            </div>
+
+
+
+            <h1>
+
+                การเชื่อมต่อ Hardware
+                และการสร้าง PWM
+                ด้วย TI C2000
+
+            </h1>
+
+
+
+            <div class="hero-en">
+
+                Hardware Interfacing
+                and PWM Generation
+                with TI C2000
+
+            </div>
+
+
+
+            <p class="hero-description">
+
+                หลักสูตรเริ่มต้นของ
+                EV Drive &amp; Control Learning Hub
+                ที่พาผู้เข้าอบรมจาก
+                Hardware Connection
+                ไปสู่ Embedded Control
+                ด้วย MATLAB / Simulink
+                และการตรวจวัดผลจริงด้วย Oscilloscope
+
+            </p>
+
+
+
+            <div class="hero-tech">
+
+                TI C2000 •
+                Shield / Buffer •
+                Hardware Protection •
+                MATLAB / Simulink •
+                PWM •
+                Oscilloscope
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUICK INFO
+========================================== -->
+
+<section class="quick-info">
+
+    <div class="quick-grid">
+
+
+        <div class="quick-item">
+
+            <div class="quick-label">
+                DURATION
+            </div>
+
+            <div class="quick-value">
+                1 วัน
+            </div>
+
+        </div>
+
+
+        <div class="quick-item">
+
+            <div class="quick-label">
+                TRAINING HOURS
+            </div>
+
+            <div class="quick-value">
+                6 ชั่วโมง
+            </div>
+
+        </div>
+
+
+        <div class="quick-item">
+
+            <div class="quick-label">
+                TRAINING MODEL
+            </div>
+
+            <div class="quick-value">
+                Hands-on
+            </div>
+
+        </div>
+
+
+        <div class="quick-item">
+
+            <div class="quick-label">
+                CLASS SIZE
+            </div>
+
+            <div class="quick-value">
+                10–15 คน
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHO SHOULD ATTEND
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            WHO SHOULD ATTEND
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            หลักสูตรนี้เหมาะกับใคร
+
+        </h2>
+
+
+        <p class="section-description">
+
+            เหมาะสำหรับผู้ที่ต้องการข้ามช่องว่าง
+            จากการเรียนทฤษฎีหรือ Simulation
+            ไปสู่การเชื่อมต่อ Controller
+            และทดลองกับ Hardware จริง
+
+        </p>
+
+
+
+        <div class="audience-grid">
+
+
+            <div class="audience-card">
+
+                <h3>
+                    อาจารย์ / ผู้สอน
+                </h3>
+
+                <p>
+                    ผู้สอนด้านไฟฟ้า
+                    อิเล็กทรอนิกส์
+                    Power Electronics
+                    และ Embedded Systems
+                </p>
+
+            </div>
+
+
+            <div class="audience-card">
+
+                <h3>
+                    วิศวกร
+                </h3>
+
+                <p>
+                    วิศวกรที่ต้องการเริ่มต้น
+                    Embedded Control
+                    และ Motor Drive
+                    จาก Hardware จริง
+                </p>
+
+            </div>
+
+
+            <div class="audience-card">
+
+                <h3>
+                    นักศึกษา
+                </h3>
+
+                <p>
+                    นักศึกษาระดับปริญญาตรี
+                    โท หรือเอก
+                    ที่ต้องการพัฒนา
+                    Experimental Skills
+                </p>
+
+            </div>
+
+
+            <div class="audience-card">
+
+                <h3>
+                    R&amp;D / Researcher
+                </h3>
+
+                <p>
+                    ผู้ที่ต้องการสร้าง
+                    Platform สำหรับต่อยอด
+                    Inverter, PMSM,
+                    FOC และงานวิจัย
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHY THIS COURSE
+========================================== -->
+
+<section class="section alt">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            WHY THIS COURSE
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            จาก Simulation
+            สู่ Hardware ที่ทำงานจริง
+
+        </h2>
+
+
+
+        <div class="why-box">
+
+
+            <div class="why-card">
+
+                <strong>
+                    PAIN POINT
+                </strong>
+
+                <h3>
+                    เขียน Model ได้
+                    แต่ Hardware ไม่ทำงาน
+                </h3>
+
+                <p>
+                    ปัญหามักไม่ได้อยู่ที่ Algorithm
+                    เพียงอย่างเดียว
+                    แต่เกี่ยวข้องกับ GPIO,
+                    Signal Level,
+                    Ground,
+                    Buffer,
+                    Protection,
+                    Pin Mapping
+                    และ Measurement
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <strong>
+                    OUR APPROACH
+                </strong>
+
+                <h3>
+                    เข้าใจเส้นทางสัญญาณ
+                    ก่อนพัฒนา Control
+                </h3>
+
+                <p>
+                    ผู้เข้าอบรมจะเรียนรู้
+                    ตั้งแต่การเชื่อมต่อ Hardware,
+                    การตรวจสอบสัญญาณ,
+                    การ Build / Download
+                    ไปจนถึงการวัด PWM
+                    บน Oscilloscope
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEARNING OUTCOMES
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            LEARNING OUTCOMES
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            เมื่อจบหลักสูตร
+            ผู้เข้าอบรมทำอะไรได้
+
+        </h2>
+
+
+
+        <div class="outcome-grid">
+
+
+            <div class="outcome-item">
+
+                <div class="outcome-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        เข้าใจ C2000 Platform
+                    </h3>
+
+                    <p>
+                        เข้าใจบทบาทของ Controller
+                        และ Hardware Interface
+                        ในระบบ Control
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="outcome-item">
+
+                <div class="outcome-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        เชื่อมต่อ Hardware ได้ถูกต้อง
+                    </h3>
+
+                    <p>
+                        เข้าใจ Shield,
+                        Buffer, Ground,
+                        Signal Direction
+                        และ Protection
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="outcome-item">
+
+                <div class="outcome-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        ใช้ MATLAB / Simulink
+                    </h3>
+
+                    <p>
+                        เข้าใจ Workflow
+                        Model → Build →
+                        Download → Hardware
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="outcome-item">
+
+                <div class="outcome-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        สร้าง PWM ได้
+                    </h3>
+
+                    <p>
+                        กำหนด Frequency,
+                        Duty Cycle
+                        และตรวจสอบผลจริง
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="outcome-item">
+
+                <div class="outcome-number">
+                    05
+                </div>
+
+                <div>
+
+                    <h3>
+                        วัดและ Debug ได้
+                    </h3>
+
+                    <p>
+                        ใช้ Oscilloscope
+                        ตรวจ Waveform
+                        และวิเคราะห์ปัญหา
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="outcome-item">
+
+                <div class="outcome-number">
+                    06
+                </div>
+
+                <div>
+
+                    <h3>
+                        พร้อมต่อ LEVEL 02
+                    </h3>
+
+                    <p>
+                        นำ PWM ไปต่อยอด
+                        Gate Driver
+                        และ 3-Phase Inverter
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SYSTEM ARCHITECTURE
+========================================== -->
+
+<section class="section architecture">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            SYSTEM ARCHITECTURE
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            เข้าใจทั้งระบบ
+            ก่อนเริ่มเขียน Control
+
+        </h2>
+
+
+        <p class="section-description">
+
+            ทุก Lab จะเชื่อมโยงตั้งแต่ Software
+            จนถึง Measurement
+            เพื่อให้ผู้เข้าอบรมเห็นเส้นทางจริงของข้อมูล
+            และสัญญาณควบคุม
+
+        </p>
+
+
+
+        <div class="architecture-flow">
+
+
+            <div class="arch-node">
+
+                <div class="arch-number">
+                    01
+                </div>
+
+                <h3>
+                    MATLAB / Simulink
+                </h3>
+
+                <p>
+                    Model
+                    &amp; Code Generation
+                </p>
+
+            </div>
+
+
+            <div class="arch-node">
+
+                <div class="arch-number">
+                    02
+                </div>
+
+                <h3>
+                    TI C2000
+                </h3>
+
+                <p>
+                    Embedded
+                    Controller
+                </p>
+
+            </div>
+
+
+            <div class="arch-node">
+
+                <div class="arch-number">
+                    03
+                </div>
+
+                <h3>
+                    Shield / Buffer
+                </h3>
+
+                <p>
+                    Interface
+                    &amp; Protection
+                </p>
+
+            </div>
+
+
+            <div class="arch-node">
+
+                <div class="arch-number">
+                    04
+                </div>
+
+                <h3>
+                    PWM Output
+                </h3>
+
+                <p>
+                    Real Control
+                    Signal
+                </p>
+
+            </div>
+
+
+            <div class="arch-node">
+
+                <div class="arch-number">
+                    05
+                </div>
+
+                <h3>
+                    Oscilloscope
+                </h3>
+
+                <p>
+                    Measure
+                    &amp; Validate
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSE MODULES / VIDEOS
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            COURSE MODULES
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            เรียนจาก Hardware
+            แล้วพัฒนา Software
+
+        </h2>
+
+
+
+        <div class="module-grid">
+
+
+            <article class="module-card">
+
+
+                <img
+                    src="https://img.youtube.com/vi/RtztrB2MBJo/hqdefault.jpg"
+                    alt="C2000 EP1 Hardware Preparation">
+
+
+                <div class="module-content">
+
+                    <div class="module-label">
+
+                        MODULE 01 / EP.1
+
+                    </div>
+
+
+                    <h3>
+
+                        Hardware Connection
+                        &amp; Protection
+
+                    </h3>
+
+
+                    <p>
+
+                        เตรียมชุดทดลอง
+                        ทำความเข้าใจ C2000,
+                        Shield / Buffer,
+                        Signal Path
+                        และหลักการป้องกัน Controller
+                        ก่อนเชื่อมเข้าสู่ระบบภายนอก
+
+                    </p>
+
+
+                    <a
+                        class="watch-video"
+                        href="https://youtu.be/RtztrB2MBJo"
+                        target="_blank"
+                        rel="noopener">
+
+                        ดูตัวอย่างบน YouTube →
+
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <article class="module-card">
+
+
+                <img
+                    src="https://img.youtube.com/vi/8PsRJRglZwk/hqdefault.jpg"
+                    alt="C2000 EP2 MATLAB Simulink PWM">
+
+
+                <div class="module-content">
+
+                    <div class="module-label">
+
+                        MODULE 02 / EP.2
+
+                    </div>
+
+
+                    <h3>
+
+                        MATLAB / Simulink
+                        &amp; PWM Generation
+
+                    </h3>
+
+
+                    <p>
+
+                        เรียนรู้ Workflow
+                        จาก Simulink Model
+                        ไปสู่ Code Generation,
+                        Download ลง C2000
+                        และสร้าง PWM
+                        ที่ตรวจวัดได้บน Hardware จริง
+
+                    </p>
+
+
+                    <a
+                        class="watch-video"
+                        href="https://youtu.be/8PsRJRglZwk"
+                        target="_blank"
+                        rel="noopener">
+
+                        ดูตัวอย่างบน YouTube →
+
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     TAKE-HOME TRAINING KIT
+========================================== -->
+
+<section class="section kit-section">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            TAKE-HOME TRAINING KIT
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            เรียนในห้อง
+            แล้วกลับไปฝึกต่อได้
+
+        </h2>
+
+
+        <p class="section-description">
+
+            จุดสำคัญของหลักสูตรคือ
+            ผู้เรียนไม่ได้จบการเรียนรู้เมื่อจบวันอบรม
+            แต่มี Hardware Platform
+            สำหรับนำกลับไปทดลอง
+            Debug และเตรียมตัวเข้าสู่ Level ต่อไป
+
+        </p>
+
+
+
+        <div class="kit-layout">
+
+
+            <div class="kit-image">
+
+                <img
+                    src="images/course-c2000-pwm.JPG"
+                    alt="C2000 Take Home Training Hardware">
+
+            </div>
+
+
+
+            <div class="kit-content">
+
+
+                <h3>
+
+                    EV Drive &amp; Control
+                    Training Kit
+
+                </h3>
+
+
+                <ul class="kit-list">
+
+                    <li>
+                        TI C2000 Controller Platform
+                    </li>
+
+                    <li>
+                        Shield / Buffer Interface
+                    </li>
+
+                    <li>
+                        Hardware Protection Interface
+                    </li>
+
+                    <li>
+                        Signal / Connection Cables
+                    </li>
+
+                    <li>
+                        Test Points
+                        สำหรับการวัดสัญญาณ
+                    </li>
+
+                    <li>
+                        Example MATLAB / Simulink Models
+                    </li>
+
+                    <li>
+                        Laboratory Files
+                        และเอกสารประกอบการเรียน
+                    </li>
+
+                </ul>
+
+
+                <div class="kit-note">
+
+                    <strong>
+                        หมายเหตุ:
+                    </strong>
+
+                    dSPACE MicroLabBox
+                    ใช้เป็น Advanced Demonstration
+                    ภายในห้องปฏิบัติการ
+                    และไม่รวมอยู่ใน
+                    Take-Home Training Kit
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ONE-DAY SCHEDULE
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            ONE-DAY TRAINING
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            ตารางอบรม 6 ชั่วโมง
+
+        </h2>
+
+
+
+        <div class="schedule">
+
+
+            <div class="schedule-row">
+
+                <div class="schedule-time">
+
+                    09:00–09:30
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <strong>
+                        C2000 &amp; Control Architecture
+                    </strong>
+
+                    <span>
+                        ภาพรวม Embedded Control
+                        และเส้นทางจาก Software
+                        สู่ Hardware
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="schedule-row">
+
+                <div class="schedule-time">
+
+                    09:30–10:30
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <strong>
+                        Hardware Interface &amp; Protection
+                    </strong>
+
+                    <span>
+                        Shield, Buffer,
+                        Ground, Signal Level,
+                        Connector และ Protection
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="schedule-row">
+
+                <div class="schedule-time">
+
+                    10:30–11:30
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <strong>
+                        Hardware Bring-Up
+                    </strong>
+
+                    <span>
+                        ต่อชุดทดลอง,
+                        ตรวจ Power,
+                        Signal และ Test Point
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="schedule-row">
+
+                <div class="schedule-time">
+
+                    11:30–12:00
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <strong>
+                        First Simulink Model
+                    </strong>
+
+                    <span>
+                        Model → Build →
+                        Download → Hardware
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="schedule-row">
+
+                <div class="schedule-time">
+
+                    13:00–14:00
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <strong>
+                        PWM Fundamentals
+                    </strong>
+
+                    <span>
+                        Frequency,
+                        Duty Cycle,
+                        Counter และ Compare
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="schedule-row">
+
+                <div class="schedule-time">
+
+                    14:00–15:00
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <strong>
+                        PWM with MATLAB / Simulink
+                    </strong>
+
+                    <span>
+                        สร้าง PWM
+                        และปรับ Duty Cycle
+                        บน Hardware จริง
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="schedule-row">
+
+                <div class="schedule-time">
+
+                    15:00–16:00
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <strong>
+                        Measurement &amp; Debug
+                    </strong>
+
+                    <span>
+                        วัด Waveform
+                        ด้วย Oscilloscope
+                        และวิเคราะห์ปัญหา
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="schedule-row">
+
+                <div class="schedule-time">
+
+                    16:00–17:00
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <strong>
+                        Final Challenge
+                        &amp; Advanced Demonstration
+                    </strong>
+
+                    <span>
+                        PWM Commissioning
+                        และตัวอย่างเส้นทาง
+                        สู่ dSPACE / Inverter
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL CHALLENGE
+========================================== -->
+
+<section class="section alt">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            FINAL PWM CHALLENGE
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            Certificate ต้องมาจาก
+            “ทำได้จริง”
+
+        </h2>
+
+
+        <p class="section-description">
+
+            ก่อนจบหลักสูตร
+            ผู้เข้าอบรมจะได้รับโจทย์
+            ให้สร้าง PWM ตาม Specification
+            และพิสูจน์ผลด้วย Oscilloscope
+
+        </p>
+
+
+
+        <div class="challenge-box">
+
+
+            <h3>
+
+                PWM Commissioning Challenge
+
+            </h3>
+
+
+            <div class="challenge-spec">
+
+                Target Frequency = 10 kHz
+                <br>
+                Duty Cycle = 60 %
+                <br>
+                Output = C2000 PWM Channel
+                <br>
+                Verification = Oscilloscope
+
+            </div>
+
+
+            <p>
+
+                ผู้เข้าอบรมต้องสามารถ
+                สร้าง Model,
+                Build,
+                Download,
+                เชื่อมต่อผ่าน Buffer,
+                วัด Waveform
+                และอธิบาย Frequency
+                กับ Duty Cycle
+                ของสัญญาณได้
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PRE COURSE
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            PRE-COURSE PREPARATION
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            เตรียมเครื่องให้พร้อม
+            ก่อนวันอบรม
+
+        </h2>
+
+
+        <p class="section-description">
+
+            เพื่อใช้เวลาในห้องอบรม
+            กับ Engineering Practice
+            มากที่สุด
+            ผู้เข้าอบรมควรติดตั้ง Software
+            ให้พร้อมล่วงหน้า
+
+        </p>
+
+
+
+        <div class="checklist">
+
+
+            <div class="check-item">
+
+                <strong>
+                    MATLAB
+                </strong>
+
+                <span>
+                    เวอร์ชันที่รองรับ
+                    Hardware Support Package
+                </span>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <strong>
+                    Simulink
+                </strong>
+
+                <span>
+                    สำหรับสร้าง
+                    Embedded Control Model
+                </span>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <strong>
+                    Embedded Coder
+                </strong>
+
+                <span>
+                    สำหรับ Workflow
+                    ในการสร้าง Code
+                </span>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <strong>
+                    C2000 Support Package
+                </strong>
+
+                <span>
+                    Hardware Support
+                    สำหรับ TI C2000
+                </span>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <strong>
+                    USB Driver
+                </strong>
+
+                <span>
+                    ตรวจสอบการเชื่อมต่อ
+                    Controller ก่อนวันจริง
+                </span>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <strong>
+                    Notebook
+                </strong>
+
+                <span>
+                    ผู้เข้าอบรมนำเครื่อง
+                    สำหรับฝึกปฏิบัติส่วนบุคคล
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     AI ASSISTED ENGINEERING
+========================================== -->
+
+<section class="section alt">
+
+    <div class="container">
+
+
+        <div class="ai-box">
+
+
+            <div class="section-tag">
+
+                AI-ASSISTED ENGINEERING
+
+            </div>
+
+
+            <h3>
+
+                ใช้ AI ช่วยคิด
+                แต่พิสูจน์ด้วย Hardware
+
+            </h3>
+
+
+            <p>
+
+                ผู้เข้าอบรมจะได้เห็นแนวทาง
+                ใช้ AI เป็น Engineering Copilot
+                สำหรับการวิเคราะห์ปัญหา,
+                Debugging,
+                อธิบาย Configuration
+                และช่วยพัฒนา Model / Code
+
+                <br><br>
+
+                แต่ทุกผลลัพธ์ต้องผ่าน
+                Measurement
+                และ Experimental Validation
+                บนระบบจริง
+
+            </p>
+
+
+            <div class="ai-flow">
+
+                <span class="ai-step">
+                    Human Engineer
+                </span>
+
+                <span class="ai-arrow">
+                    →
+                </span>
+
+                <span class="ai-step">
+                    AI Copilot
+                </span>
+
+                <span class="ai-arrow">
+                    →
+                </span>
+
+                <span class="ai-step">
+                    Simulink / Code
+                </span>
+
+                <span class="ai-arrow">
+                    →
+                </span>
+
+                <span class="ai-step">
+                    Hardware
+                </span>
+
+                <span class="ai-arrow">
+                    →
+                </span>
+
+                <span class="ai-step">
+                    Measure
+                </span>
+
+                <span class="ai-arrow">
+                    →
+                </span>
+
+                <span class="ai-step">
+                    Validate
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     NEXT LEVEL
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-tag">
+
+            YOUR NEXT STEP
+
+        </div>
+
+
+        <div class="next-level">
+
+
+            <div class="section-tag">
+
+                LEVEL 02
+
+            </div>
+
+
+            <h3>
+
+                Gate Driver
+                &amp; 3-Phase Inverter
+
+            </h3>
+
+
+            <p>
+
+                เมื่อสร้าง PWM
+                และเข้าใจ Hardware Interface แล้ว
+                ขั้นต่อไปคือการนำ Control Signal
+                ไปขับ Gate Driver
+                และสร้าง Three-Phase Inverter
+                พร้อมเรียนรู้ Dead Time,
+                Switching,
+                Protection
+                และ Power Stage
+
+            </p>
+
+
+            <div class="next-tech">
+
+                PWM →
+                Gate Driver →
+                3-Phase VSI →
+                Motor Drive
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     REGISTRATION
+========================================== -->
+
+<section class="registration">
+
+    <div class="registration-box">
+
+
+        <div class="section-tag">
+
+            REGISTRATION
+
+        </div>
+
+
+        <h2>
+
+            LEVEL 01
+            C2000 Hardware &amp; PWM
+
+        </h2>
+
+
+        <p>
+
+            วันอบรม,
+            ค่าใช้จ่าย,
+            รายละเอียด Training Kit
+            และระบบลงทะเบียน
+            จะประกาศเมื่อผ่าน
+            การตรวจสอบ Course Package
+            และกระบวนการที่เกี่ยวข้อง
+            เรียบร้อยแล้ว
+
+        </p>
+
+
+        <span class="registration-status">
+
+            กำลังเตรียมเปิดรับสมัคร
+
+        </span>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            EV DRIVE &amp;
+            CONTROL LEARNING HUB
+        </strong>
+
+    </p>
+
+    <p>
+        Electric Vehicle Technology Program
+    </p>
+
+    <p>
+        Faculty of Industry and Technology
+        <br>
+        Rajamangala University
+        of Technology Rattanakosin
+    </p>
+
+    <p style="margin-top:14px;">
+        Technology Plus + EV
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
