@@ -1403,6 +1403,218 @@
 
 }
 
+/* =========================================
+   COURSE INTEREST / WAITING LIST
+========================================= */
+
+.course-interest {
+
+    background:
+        linear-gradient(
+            135deg,
+            #062f45,
+            #087b73
+        );
+
+    color: white;
+}
+
+.interest-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap: 35px;
+
+    align-items: center;
+}
+
+.interest-tag {
+
+    color: #53ead5;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 18px;
+}
+
+.interest-title {
+
+    margin:
+        0 0 18px;
+
+    color: white;
+
+    font-size: 42px;
+
+    line-height: 1.25;
+}
+
+.interest-description {
+
+    margin: 0;
+
+    max-width: 760px;
+
+    color: #d9edf1;
+
+    font-size: 17px;
+
+    line-height: 1.85;
+}
+
+
+.interest-benefits {
+
+    margin-top: 28px;
+
+    display: grid;
+
+    gap: 12px;
+}
+
+.interest-benefit {
+
+    padding: 15px 18px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    color: #eafafa;
+}
+
+
+.interest-action-card {
+
+    padding: 32px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,.10);
+
+    border:
+        1px solid rgba(255,255,255,.18);
+}
+
+.interest-action-card h3 {
+
+    margin:
+        0 0 12px;
+
+    color: white;
+
+    font-size: 25px;
+}
+
+.interest-action-card p {
+
+    margin:
+        0 0 22px;
+
+    color: #d7eef0;
+
+    line-height: 1.7;
+}
+
+.interest-button {
+
+    display: inline-block;
+
+    padding:
+        16px 24px;
+
+    border-radius: 999px;
+
+    background: #24c8b1;
+
+    color: #06283b;
+
+    text-decoration: none;
+
+    font-weight: 900;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.interest-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    opacity: .92;
+}
+
+.interest-small-note {
+
+    margin-top: 18px;
+
+    color: #c7e5e7;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   WAITING LIST RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .interest-layout {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .interest-title {
+
+        font-size: 34px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .interest-title {
+
+        font-size: 30px;
+    }
+
+    .interest-action-card {
+
+        padding: 25px;
+    }
+
+    .interest-button {
+
+        display: block;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+}
+
         /* =========================================
            REGISTRATION CTA
         ========================================= */
@@ -3669,6 +3881,143 @@
 
         </div>
 
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     COURSE INTEREST / WAITING LIST
+========================================== -->
+
+<section class="section course-interest">
+
+    <div class="container">
+
+        <div class="interest-layout">
+
+
+            <div>
+
+
+                <div class="interest-tag">
+
+                    COURSE INTEREST / WAITING LIST
+
+                </div>
+
+
+                <h2 class="interest-title">
+
+                    สนใจเรียนกับ
+                    EV Drive &amp; Control Learning Hub?
+
+                </h2>
+
+
+                <p class="interest-description">
+
+                    หากท่านสนใจหลักสูตร
+                    LEVEL 01 —
+                    การเชื่อมต่อ Hardware
+                    และการสร้าง PWM ด้วย TI C2000
+
+                    สามารถแจ้งความสนใจไว้ล่วงหน้าได้
+
+                    ข้อมูลนี้จะช่วยให้เรา
+                    วางแผนจำนวนผู้เข้าอบรม
+                    Training Kit
+                    รอบการอบรม
+                    และหลักสูตรต่อยอด
+                    ให้ตรงกับความต้องการของผู้เรียนมากที่สุด
+
+                </p>
+
+
+                <div class="interest-benefits">
+
+
+                    <div class="interest-benefit">
+
+                        ✓ รับแจ้งเมื่อเปิดรับสมัครรุ่นแรก
+
+                    </div>
+
+
+                    <div class="interest-benefit">
+
+                        ✓ ช่วยกำหนดหัวข้ออบรม
+                        ให้ตรงกับความต้องการจริง
+
+                    </div>
+
+
+                    <div class="interest-benefit">
+
+                        ✓ รับข้อมูลเส้นทางการเรียน
+                        LEVEL 01 → LEVEL 06
+
+                    </div>
+
+
+                    <div class="interest-benefit">
+
+                        ✓ ติดตามข่าวสาร
+                        Training Kit
+                        และ Advanced Course
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="interest-action-card">
+
+
+                <h3>
+
+                    LEVEL 01 Waiting List
+
+                </h3>
+
+
+                <p>
+
+                    แจ้งความสนใจไว้ก่อน
+                    โดยยังไม่ต้องชำระเงิน
+                    และยังไม่ถือเป็นการจองที่นั่ง
+
+                </p>
+
+
+                <a
+                    class="interest-button"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSftchjQgQh6mcvL3mG5ON7RzyUSIxD4nXUAOwId0EP9cdJykg/viewform?usp=header"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    แจ้งความสนใจหลักสูตร →
+
+                </a>
+
+
+                <div class="interest-small-note">
+
+                    แบบฟอร์มนี้ใช้สำหรับสำรวจความสนใจ
+                    และการแจ้งข่าวเมื่อเปิดรับสมัครเท่านั้น
+
+                </div>
+
+
+            </div>
+
+
+        </div>
 
     </div>
 
