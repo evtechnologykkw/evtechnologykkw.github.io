@@ -11,6 +11,23 @@
 
   gtag('config', 'AW-17889447432');
 </script>
+<!-- Event snippet for EV2570 - Click Apply conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17889447432/jX5zCMu27IUdEIicrdJC',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -5069,6 +5086,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="admission-button">
+                    onclick="gtag_report_conversion();">
 
                     สมัครผ่านระบบมหาวิทยาลัย ↗
 
@@ -5121,6 +5139,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="admission-button">
+                    onclick="gtag_report_conversion();">
 
                     สมัครผ่านระบบมหาวิทยาลัย ↗
 
